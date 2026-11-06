@@ -21,7 +21,7 @@ public class DIalogueScript : MonoBehaviour
     {
         // Solo limpiamos los textos al inicio
         DialogueText.text = string.Empty;
-        SpeakerNameText.text = string.Empty; 
+        
         
         // 🔥 ELIMINADO: StartDialogue(); (No lo pongas aquí)
     }
