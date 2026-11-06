@@ -1,17 +1,17 @@
 using UnityEngine;
 using System.Collections;
 using TMPro;
-using UnityEngine.InputSystem; // Mantenlo si usaste el Input System nuevo
+using UnityEngine.InputSystem;
 
 public class DIalogueScript : MonoBehaviour
 {
     [Header("Referencias UI")]
-    public TextMeshProUGUI DialogueText; // Tu texto de la burbuja
-    public TextMeshProUGUI SpeakerNameText; // <-- NUEVO: Aquí arrastrarás el texto del Nombre
+    public TextMeshProUGUI DialogueText; 
+    public TextMeshProUGUI SpeakerNameText; 
 
     [Header("Datos del Diálogo")]
-    public string[] SpeakerNames; // <-- NUEVO: Array para los nombres
-    public string[] DialogueLines; // Array para los textos
+    public string[] SpeakerNames; 
+    public string[] DialogueLines; 
     public float TextSpeed = 0.01f;
 
     private int index;
@@ -19,9 +19,11 @@ public class DIalogueScript : MonoBehaviour
 
     void Start()
     {
+        // Solo limpiamos los textos al inicio
         DialogueText.text = string.Empty;
-        SpeakerNameText.text = string.Empty; // Limpiamos el nombre al inicio
-        StartDialogue();
+        SpeakerNameText.text = string.Empty; 
+        
+        // 🔥 ELIMINADO: StartDialogue(); (No lo pongas aquí)
     }
 
     void Update()
@@ -46,10 +48,11 @@ public class DIalogueScript : MonoBehaviour
 
     public void StartDialogue()
     {
+        StopAllCoroutines(); // 🔥 NUEVO: Detiene cualquier escritura anterior por seguridad
+
         index = 0;
         DialogueText.text = string.Empty;
         
-        // Ponemos el nombre del primer personaje antes de empezar a escribir
         if (SpeakerNames.Length > index) 
             SpeakerNameText.text = SpeakerNames[index];
 
@@ -77,7 +80,6 @@ public class DIalogueScript : MonoBehaviour
             index++;
             DialogueText.text = string.Empty;
             
-            // NUEVO: Actualizamos el nombre al pasar de línea
             if (SpeakerNames.Length > index) 
                 SpeakerNameText.text = SpeakerNames[index];
 
