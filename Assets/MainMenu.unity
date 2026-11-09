@@ -496,7 +496,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 196429701}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80242cadcf0574a469961fc1c566be30, type: 3}
+  m_Script: {fileID: 11500000, guid: 9370b8d0ab4ed084cab80339b3e69844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainMenuManager
   mainMenuContent: {fileID: 1727441673}
@@ -917,7 +917,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 469080646}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7eb5e04b75a5134dab6cda1ee06af74, type: 3}
+  m_Script: {fileID: 11500000, guid: e66e4a94273ecf849af25f1ef31d3400, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SettingsManager
   masterMixer: {fileID: 24100000, guid: a2cd920fcfa51b44184666ddc0119ddc, type: 2}
