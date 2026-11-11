@@ -5,11 +5,12 @@ TagManager:
   serializedVersion: 3
   tags:
   - ObjetoInteractivo
+  - Obstaculos
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Obstaculos
   - Water
   - UI
   - 
