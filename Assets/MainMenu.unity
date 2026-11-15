@@ -499,8 +499,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9370b8d0ab4ed084cab80339b3e69844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainMenuManager
-  mainMenuContent: {fileID: 1727441673}
-  settingsPanel: {fileID: 469080646}
 --- !u!4 &196429703
 Transform:
   m_ObjectHideFlags: 0
@@ -920,10 +918,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e66e4a94273ecf849af25f1ef31d3400, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SettingsManager
-  masterMixer: {fileID: 24100000, guid: a2cd920fcfa51b44184666ddc0119ddc, type: 2}
-  masterSlider: {fileID: 1461454129}
-  musicSlider: {fileID: 1259906979}
-  sfxSlider: {fileID: 404564784}
 --- !u!1 &482889491
 GameObject:
   m_ObjectHideFlags: 0
@@ -2363,7 +2357,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 36521095}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
