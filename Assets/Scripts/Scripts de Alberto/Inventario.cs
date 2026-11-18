@@ -78,4 +78,33 @@ public class Inventario : MonoBehaviour
         }
         Debug.Log($"Objeto '{objeto.nombre}' organizado en el grid en la posición ({inicioX}, {inicioY})");
     }
+
+    public bool TieneObjeto(ItemData objetoBuscado)
+    {
+        for (int x = 0; x < columnasGrid; x++)
+        {
+            for (int y = 0; y < filasGrid; y++)
+            {
+                if (gridInventario[x, y] == objetoBuscado)
+                {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public void EliminarObjeto(ItemData objetoAEliminar)
+    {
+        for (int x = 0; x < columnasGrid; x++)
+        {
+            for (int y = 0; y < filasGrid; y++)
+            {
+                if (gridInventario[x, y] == objetoAEliminar)
+                {
+                    gridInventario[x, y] = null;
+                }
+            }
+        }
+    }
 }
