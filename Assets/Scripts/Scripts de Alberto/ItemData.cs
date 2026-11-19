@@ -21,4 +21,7 @@ public class ItemData : ScriptableObject
 
     [Header("Contenido si es Documento")]
     [TextArea(10, 20)] public string contenidoDocumento;
+
+    [Header("Visualizción 3D e interacción")]
+    public GameObject prefabModelo3D;
 }

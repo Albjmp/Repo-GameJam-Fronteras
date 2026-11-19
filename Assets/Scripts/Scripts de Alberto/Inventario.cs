@@ -130,4 +130,33 @@ public class Inventario : MonoBehaviour
 
         return DescartarObjeto(obj);
     }
+
+    public bool TieneObjeto(ItemData objetoBuscado)
+    {
+        for (int x = 0; x < columnasGrid; x++)
+        {
+            for (int y = 0; y < filasGrid; y++)
+            {
+                if (gridInventario[x, y] == objetoBuscado)
+                {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public void EliminarObjeto(ItemData objetoAEliminar)
+    {
+        for (int x = 0; x < columnasGrid; x++)
+        {
+            for (int y = 0; y < filasGrid; y++)
+            {
+                if (gridInventario[x, y] == objetoAEliminar)
+                {
+                    gridInventario[x, y] = null;
+                }
+            }
+        }
+    }
 }
