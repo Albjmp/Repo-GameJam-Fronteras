@@ -1,21 +1,80 @@
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class Selected : MonoBehaviour
 {
-    LayerMask mask;
+    [Header("Configuración de Raycast")]
+    [Tooltip("Distancia máxima de interacción en metros.")]
+    [SerializeField] private float distancia = 3.5f;
 
+    [Tooltip("Capas con las que colisiona el raycast. Si se deja en 'Nothing' o 'Default', detectará automáticamente.")]
+    [SerializeField] private LayerMask mask;
+
+    [Header("Interfaz de Usuario")]
     public Texture2D puntero;
     public GameObject TextDetect;
 
-    GameObject ultimoReconocido = null;
-    public float distancia = 1.5f;
+    // Componentes de texto UI en TextDetect (si existen)
+    private TextMeshProUGUI tmpText;
+    private Text uiText;
+
+    // Cámara de origen del raycast
+    private Camera camara;
+
+    // Estado del objeto bajo la mira
+    private GameObject ultimoReconocido = null;
+    private ObjetoInteractivo objetoActual = null;
+    private Renderer rendererActual = null;
+    private Color colorOriginal = Color.white;
+    private bool tieneColorGuardado = false;
+    private string propiedadColor = "_Color";
+
+    void Awake()
+    {
+        // Obtener la cámara si este script está en ella, o buscar la cámara principal
+        camara = GetComponent<Camera>();
+        if (camara == null)
+        {
+            camara = Camera.main;
+        }
+
+        // Si la máscara no se configuró o solo tiene capa 0, incluir 'Raycast Detect' y 'Default'
+        int capaRaycastDetect = LayerMask.GetMask("Raycast Detect");
+        int capaDefault = 1 << LayerMask.NameToLayer("Default");
+
+        if (mask.value == 0)
+        {
+            mask = (capaRaycastDetect != 0) ? (capaRaycastDetect | capaDefault) : Physics.DefaultRaycastLayers;
+        }
+        else
+        {
+            // Asegurarnos de que incluya Raycast Detect si existe
+            if (capaRaycastDetect != 0)
+            {
+                mask |= capaRaycastDetect;
+            }
+        }
+
+        if (distancia < 2.5f)
+        {
+            distancia = 3.5f;
+        }
+    }
 
     void Start()
     {
-        mask = LayerMask.GetMask("Raycast Detect");
-      
         if (TextDetect != null)
         {
+            tmpText = TextDetect.GetComponent<TextMeshProUGUI>();
+            if (tmpText == null) tmpText = TextDetect.GetComponentInChildren<TextMeshProUGUI>();
+
+            if (tmpText == null)
+            {
+                uiText = TextDetect.GetComponent<Text>();
+                if (uiText == null) uiText = TextDetect.GetComponentInChildren<Text>();
+            }
+
             TextDetect.SetActive(false);
         }
     }
@@ -25,74 +84,119 @@ public class Selected : MonoBehaviour
         RaycastHit hit;
         bool detectoInteractivo = false;
 
+        // Determinar el origen y dirección del raycast (siempre desde el punto de vista del jugador)
+        Transform origen = (camara != null) ? camara.transform : transform;
+        Vector3 puntoInicio = origen.position;
+        Vector3 direccion = origen.forward;
+
         // Lanzamos el raycast
-        if (Physics.Raycast(transform.position, transform.forward, out hit, distancia, mask))
+        if (Physics.Raycast(puntoInicio, direccion, out hit, distancia, mask))
         {
-            // Verificamos si es un objeto interactivo
-            if (hit.collider.CompareTag("ObjetoInteractivo"))
+            ObjetoInteractivo interactivo = hit.collider.GetComponentInParent<ObjetoInteractivo>();
+
+            if (interactivo != null || hit.collider.CompareTag("ObjetoInteractivo"))
             {
                 detectoInteractivo = true;
-                
-                // Gestionamos la selección visual del objeto
+
+                // Si cambiamos de objeto enfocado, actualizamos la selección
                 if (ultimoReconocido != hit.transform.gameObject)
                 {
                     Deselect();
-                    SelectedObject(hit.transform);
+                    SelectedObject(hit.transform, interactivo);
                 }
 
                 // Detectar tecla E para interactuar
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    ObjetoInteractivo objInteractivo = hit.collider.GetComponent<ObjetoInteractivo>();
-                    if (objInteractivo != null)
+                    if (interactivo != null)
                     {
-                        objInteractivo.ActivarObjeto();
+                        Debug.Log($"[Selected] Interactuando con '{interactivo.gameObject.name}'");
+                        interactivo.ActivarObjeto();
+
+                        // Actualizar el texto en pantalla inmediatamente (ej: de Abrir a Cerrar)
+                        ActualizarTextoUI(interactivo);
                     }
                 }
             }
         }
 
-        // Si no estamos mirando ningún objeto interactivo válido, limpiamos la selección
+        // Si dejamos de mirar un objeto interactivo, limpiamos selección
         if (!detectoInteractivo)
         {
             Deselect();
         }
 
-        // Actualizamos el estado del texto de la UI en base a si hay un objeto reconocido
+        // Mostrar u ocultar el aviso de interacción
         if (TextDetect != null)
         {
             TextDetect.SetActive(ultimoReconocido != null);
         }
 
-        Debug.DrawRay(transform.position, transform.forward * distancia, Color.yellow);
+        Debug.DrawRay(puntoInicio, direccion * distancia, Color.yellow);
     }
 
-    void SelectedObject(Transform objTransform)
+    void SelectedObject(Transform objTransform, ObjetoInteractivo interactivo)
     {
-        Renderer rend = objTransform.GetComponent<Renderer>();
-        if (rend != null)
-        {
-            rend.material.color = Color.red;
-        }
         ultimoReconocido = objTransform.gameObject;
+        objetoActual = interactivo;
+
+        // Guardar color original y resaltar (soporta tanto URP '_BaseColor' como Standard '_Color')
+        rendererActual = objTransform.GetComponent<Renderer>();
+        if (rendererActual != null && rendererActual.material != null)
+        {
+            if (rendererActual.material.HasProperty("_BaseColor"))
+            {
+                propiedadColor = "_BaseColor";
+                colorOriginal = rendererActual.material.GetColor("_BaseColor");
+                tieneColorGuardado = true;
+                rendererActual.material.SetColor("_BaseColor", Color.red);
+            }
+            else if (rendererActual.material.HasProperty("_Color"))
+            {
+                propiedadColor = "_Color";
+                colorOriginal = rendererActual.material.GetColor("_Color");
+                tieneColorGuardado = true;
+                rendererActual.material.SetColor("_Color", Color.red);
+            }
+        }
+
+        ActualizarTextoUI(interactivo);
     }
 
     void Deselect()
     {
-        if (ultimoReconocido != null)
+        if (rendererActual != null && tieneColorGuardado && rendererActual.material != null)
         {
-            Renderer rend = ultimoReconocido.GetComponent<Renderer>();
-            if (rend != null)
+            if (rendererActual.material.HasProperty(propiedadColor))
             {
-                rend.material.color = Color.white;
+                rendererActual.material.SetColor(propiedadColor, colorOriginal);
             }
-            ultimoReconocido = null;
+        }
+
+        rendererActual = null;
+        tieneColorGuardado = false;
+        ultimoReconocido = null;
+        objetoActual = null;
+    }
+
+    private void ActualizarTextoUI(ObjetoInteractivo interactivo)
+    {
+        if (interactivo == null) return;
+
+        string mensaje = interactivo.ObtenerTextoInteraccion();
+
+        if (tmpText != null)
+        {
+            tmpText.text = mensaje;
+        }
+        else if (uiText != null)
+        {
+            uiText.text = mensaje;
         }
     }
 
     void OnGUI()
     {
-        // Verificamos que la variable puntero esté asignada para evitar errores en consola
         if (puntero != null)
         {
             Rect rect = new Rect(Screen.width / 2 - puntero.width / 2, Screen.height / 2 - puntero.height / 2, puntero.width, puntero.height);

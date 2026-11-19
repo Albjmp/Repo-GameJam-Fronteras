@@ -13,6 +13,9 @@ public Image barraDeVida;
     // Update is called once per frame
     void Update()
     {
-        barraDeVida.fillAmount = vidaActual / vidaMaxima;
+        if (barraDeVida != null)
+        {
+            barraDeVida.fillAmount = vidaActual / vidaMaxima;
+        }
     }
 }

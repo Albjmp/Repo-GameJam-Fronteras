@@ -8987,6 +8987,7 @@ GameObject:
   - component: {fileID: 1570172368}
   - component: {fileID: 1570172367}
   - component: {fileID: 1570172370}
+  - component: {fileID: 1570172371}
   m_Layer: 0
   m_Name: Jugador
   m_TagString: Untagged
@@ -9067,6 +9068,21 @@ MonoBehaviour:
   barraBateriaUI: {fileID: 1614098640}
   bateriaMaxima: 100
   velocidadConsumo: 10
+--- !u!114 &1570172371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1570172366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be1594862a958375995a35c2ee345d3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BarraDeVida
+  barraDeVida: {fileID: 0}
+  vidaMaxima: 100
+  vidaActual: 100
 --- !u!1 &1574963794
 GameObject:
   m_ObjectHideFlags: 0
@@ -9261,7 +9277,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1513680598}
   m_HandleRect: {fileID: 1513680597}
   m_Direction: 0
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:

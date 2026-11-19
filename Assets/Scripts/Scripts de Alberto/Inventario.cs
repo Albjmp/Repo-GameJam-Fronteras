@@ -78,4 +78,56 @@ public class Inventario : MonoBehaviour
         }
         Debug.Log($"Objeto '{objeto.nombre}' organizado en el grid en la posición ({inicioX}, {inicioY})");
     }
+
+    /// <summary>
+    /// Elimina o descarta un objeto del inventario (tanto si es Documento como si está en el Grid).
+    /// </summary>
+    public bool DescartarObjeto(ItemData objeto)
+    {
+        if (objeto == null) return false;
+
+        if (objeto.tipoObjeto == ItemType.Documento)
+        {
+            if (listaDocumentos.Remove(objeto))
+            {
+                Debug.Log($"Documento '{objeto.nombre}' descartado del inventario.");
+                return true;
+            }
+            return false;
+        }
+        else
+        {
+            bool encontrado = false;
+            for (int y = 0; y < filasGrid; y++)
+            {
+                for (int x = 0; x < columnasGrid; x++)
+                {
+                    if (gridInventario[x, y] == objeto)
+                    {
+                        gridInventario[x, y] = null;
+                        encontrado = true;
+                    }
+                }
+            }
+
+            if (encontrado)
+            {
+                Debug.Log($"Objeto '{objeto.nombre}' descartado del grid del inventario.");
+            }
+            return encontrado;
+        }
+    }
+
+    /// <summary>
+    /// Elimina o descarta el objeto que ocupe una celda específica del grid.
+    /// </summary>
+    public bool DescartarObjetoEnPosicion(int x, int y)
+    {
+        if (x < 0 || x >= columnasGrid || y < 0 || y >= filasGrid) return false;
+
+        ItemData obj = gridInventario[x, y];
+        if (obj == null) return false;
+
+        return DescartarObjeto(obj);
+    }
 }
