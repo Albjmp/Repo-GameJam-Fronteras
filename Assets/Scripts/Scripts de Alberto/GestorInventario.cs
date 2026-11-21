@@ -1,9 +1,11 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class GestorInventario : MonoBehaviour
 {
     [Header("Referencias de UI")]
     [SerializeField] private GameObject panelInventario;
+    public GameObject barraLinternaUI;
 
     [Header("Configuración de Teclas")]
     [SerializeField] private KeyCode teclaInventario = KeyCode.I;
@@ -45,12 +47,32 @@ public class GestorInventario : MonoBehaviour
     {
         Time.timeScale = 0f;
 
+        if (barraLinternaUI != null)
+        {
+            barraLinternaUI.SetActive(false);
+        }
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
         Debug.Log("Inventario Abierto: Juego Pausado");
     }
 
     private void CerrarInventario()
     {
         Time.timeScale = 1f;
+
+        ControladorJugador jugador = FindAnyObjectByType<ControladorJugador>();
+        if (jugador != null && jugador.protagonistaActivo == ControladorJugador.Protagonista.Ivo)
+        {
+            if (barraLinternaUI != null)
+            {
+                barraLinternaUI.SetActive(true);
+            }
+        }
+        
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
 
         Debug.Log("Inventario Cerrado: Juego Reanudado");
     }

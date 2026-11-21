@@ -432,7 +432,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PuertaConLlave
   llaveRequerida: {fileID: 11400000, guid: 88859ce0f29e9f24381b051c51371f52, type: 2}
-  consumirLlaveAlUsar: 0
+  consumirLlaveAlUsar: 1
   anguloApertura: 90
   velocidadApertura: 3
   textoAvisoUI: {fileID: 427340312}
@@ -7106,6 +7106,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1164920814}
   m_CullTransparentMesh: 1
+--- !u!1 &1175080393
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1175080394}
+  - component: {fileID: 1175080395}
+  m_Layer: 5
+  m_Name: Capa_Objetos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1175080394
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1175080393}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1866079067}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 800, y: 560}
+  m_Pivot: {x: 0, y: 1}
+--- !u!114 &1175080395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1175080393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.LayoutElement
+  m_IgnoreLayout: 1
+  m_MinWidth: -1
+  m_MinHeight: -1
+  m_PreferredWidth: -1
+  m_PreferredHeight: -1
+  m_FlexibleWidth: -1
+  m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!1 &1191610887
 GameObject:
   m_ObjectHideFlags: 0
@@ -10119,6 +10175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Inventario
   listaDocumentos: []
+  objetosGenerales: []
   columnasGrid: 10
   filasGrid: 6
 --- !u!114 &1570172372
@@ -10346,7 +10403,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1513680598}
   m_HandleRect: {fileID: 1513680597}
   m_Direction: 0
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -11021,6 +11078,7 @@ GameObject:
   - component: {fileID: 1619142840}
   - component: {fileID: 1619142839}
   - component: {fileID: 1619142838}
+  - component: {fileID: 1619142841}
   m_Layer: 5
   m_Name: Pantalla_General
   m_TagString: Untagged
@@ -11086,6 +11144,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1619142841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1619142837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e49cd3ff92a3e6946b7d2551f757a665, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIGridInventario
+  inventario: {fileID: 1570172371}
+  contenedorObjetos: {fileID: 1175080394}
+  prefabItemVisual: {fileID: 2956113306547216615, guid: c261d19359b761747ac8e6aca57b0a0e, type: 3}
+  tamanoCelda: 80
 --- !u!1 &1621891342
 GameObject:
   m_ObjectHideFlags: 0
@@ -11806,6 +11880,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GestorInventario
   panelInventario: {fileID: 2089926095}
+  barraLinternaUI: {fileID: 1614098638}
   teclaInventario: 105
 --- !u!4 &1729979401
 Transform:
@@ -12352,13 +12427,14 @@ RectTransform:
   - {fileID: 159522610}
   - {fileID: 1710542151}
   - {fileID: 1940884912}
+  - {fileID: 1175080394}
   m_Father: {fileID: 1619142840}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 246, y: -522}
   m_SizeDelta: {x: 800, y: 560}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0, y: 1}
 --- !u!114 &1866079068
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,9 +1,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public class ObjetoEnGrid
+{
+    public ItemData datos;
+    public int x;
+    public int y;
+    public bool rotado;
+
+    public int AnchoActual => rotado ? datos.alto : datos.ancho;
+    public int AltoActual => rotado ? datos.ancho : datos.alto;
+}
 public class Inventario : MonoBehaviour
 {
     public List<ItemData> listaDocumentos = new List<ItemData>();
+    public List<ObjetoEnGrid> objetosGenerales = new List<ObjetoEnGrid>();
 
     [Header("Configuración Grid General")]
     public int columnasGrid = 10;
@@ -11,6 +23,8 @@ public class Inventario : MonoBehaviour
 
     private ItemData[,] gridInventario;
 
+    public System.Action alActualizarInventario;
+    
     private void Awake()
     {
         gridInventario = new ItemData[columnasGrid, filasGrid];
@@ -21,7 +35,8 @@ public class Inventario : MonoBehaviour
         if (nuevoObjeto.tipoObjeto == ItemType.Documento)
         {
             listaDocumentos.Add(nuevoObjeto);
-            Debug.Log($"Documento '{nuevoObjeto.nombre}' guardado sin límites"); 
+            Debug.Log($"Documento '{nuevoObjeto.nombre}' guardado sin límites");
+            alActualizarInventario?.Invoke();
             return true;
         } else
         {
@@ -31,32 +46,48 @@ public class Inventario : MonoBehaviour
 
     private bool IntentarInsertarEnGrid(ItemData objeto)
     {
-        for (int y = 0; y < filasGrid; y++)
+        bool[] orientaciones = { false, true };
+
+        foreach (bool rot in orientaciones)
         {
-            for (int x = 0; x < columnasGrid; x++)
+            int w = rot ? objeto.alto : objeto.ancho;
+            int h = rot ? objeto.ancho : objeto.alto;
+
+            for (int y = 0; y < filasGrid; y++)
             {
-                if (PuedeCaber(objeto, x, y))
+                for (int x = 0; x < columnasGrid; x++)
                 {
-                    AsignarEspacioGrid(objeto, x, y);
-                    return true;
+                    if (PuedeCaber(x, y, w, h))
+                    {
+                        ObjetoEnGrid nuevoItem = new ObjetoEnGrid
+                        {
+                            datos = objeto,
+                            x = x,
+                            y = y,
+                            rotado = rot
+                        };
+                        objetosGenerales.Add(nuevoItem);
+                        OcuparCeldas(nuevoItem);
+                        alActualizarInventario?.Invoke();
+                        return true;
+                    }
                 }
             }
         }
-
         Debug.Log("No hay espacio suficiente en el inventario general");
         return false;
     }
 
-    private bool PuedeCaber(ItemData objeto, int inicioX, int inicioY)
+    public bool PuedeCaber(int inicioX, int inicioY, int ancho, int alto)
     {
-        if (inicioX + objeto.ancho > columnasGrid || inicioY + objeto.alto > filasGrid)
+        if (inicioX < 0 || inicioY < 0 || inicioX + ancho > columnasGrid || inicioY + alto > filasGrid)
         {
             return false;
         }
 
-        for (int x = inicioX; x < inicioX + objeto.ancho; x++)
+        for (int x = inicioX; x < inicioX + ancho; x++)
         {
-            for (int y = inicioY; y < inicioY + objeto.alto; y++)
+            for (int y = inicioY; y < inicioY + alto; y++)
             {
                 if (gridInventario[x, y] != null)
                 {
@@ -67,16 +98,38 @@ public class Inventario : MonoBehaviour
         return true;
     }
 
-    private void AsignarEspacioGrid(ItemData objeto, int inicioX, int inicioY)
+    //private void AsignarEspacioGrid(ItemData objeto, int inicioX, int inicioY)
+    //{
+        //for (int x = inicioX; x < inicioX + objeto.ancho; x++)
+        //{
+            //for (int y = inicioY; y < inicioY + objeto.alto; y++)
+            //{
+                //gridInventario[x, y] = objeto;
+            //}
+        //}
+        //Debug.Log($"Objeto '{objeto.nombre}' organizado en el grid en la posición ({inicioX}, {inicioY})");
+    //}
+
+    public void OcuparCeldas(ObjetoEnGrid item)
     {
-        for (int x = inicioX; x < inicioX + objeto.ancho; x++)
+        for (int x = item.x; x < item.x + item.AnchoActual; x++)
         {
-            for (int y = inicioY; y < inicioY + objeto.alto; y++)
+            for (int y = item.y; y < item.y + item.AltoActual; y++)
             {
-                gridInventario[x, y] = objeto;
+                gridInventario[x, y] = item.datos;
             }
         }
-        Debug.Log($"Objeto '{objeto.nombre}' organizado en el grid en la posición ({inicioX}, {inicioY})");
+    }
+
+    public void LiberarCeldas(ObjetoEnGrid item)
+    {
+        for (int x = item.x; x < item.x + item.AnchoActual; x++)
+        {
+            for (int y = item.y; y < item.y + item.AltoActual; y++)
+            {
+                gridInventario[x, y] = null;
+            }
+        }
     }
 
     /// <summary>
@@ -133,30 +186,41 @@ public class Inventario : MonoBehaviour
 
     public bool TieneObjeto(ItemData objetoBuscado)
     {
-        for (int x = 0; x < columnasGrid; x++)
-        {
-            for (int y = 0; y < filasGrid; y++)
-            {
-                if (gridInventario[x, y] == objetoBuscado)
-                {
-                    return true;
-                }
-            }
-        }
-        return false;
+        return objetosGenerales.Exists(item => item.datos == objetoBuscado);
+        
+        //for (int x = 0; x < columnasGrid; x++)
+        //{
+            //for (int y = 0; y < filasGrid; y++)
+            //{
+                //if (gridInventario[x, y] == objetoBuscado)
+                //{
+                    //return true;
+                //}
+            //}
+        //}
+        //return false;
     }
 
     public void EliminarObjeto(ItemData objetoAEliminar)
     {
-        for (int x = 0; x < columnasGrid; x++)
+        ObjetoEnGrid encontrado = objetosGenerales.Find(item => item.datos == objetoAEliminar);
+        if (encontrado != null)
         {
-            for (int y = 0; y < filasGrid; y++)
-            {
-                if (gridInventario[x, y] == objetoAEliminar)
-                {
-                    gridInventario[x, y] = null;
-                }
-            }
+            LiberarCeldas(encontrado);
+            objetosGenerales.Remove(encontrado);
+            alActualizarInventario?.Invoke();
         }
+        
+        
+        //for (int x = 0; x < columnasGrid; x++)
+        //{
+            //for (int y = 0; y < filasGrid; y++)
+            //{
+               // if (gridInventario[x, y] == objetoAEliminar)
+                //{
+                //    gridInventario[x, y] = null;
+                //}
+           // }
+       // }
     }
 }

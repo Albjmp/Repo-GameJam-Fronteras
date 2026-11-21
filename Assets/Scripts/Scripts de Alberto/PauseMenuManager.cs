@@ -68,8 +68,8 @@ public class PauseMenuManager : MonoBehaviour
             }
         }
 
-        //Cursor.visible = false;
-        //Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void LoadMainMenu()

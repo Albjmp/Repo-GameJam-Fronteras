@@ -20,14 +20,22 @@ public class DIalogueScript : MonoBehaviour
     void Start()
     {
         // Solo limpiamos los textos al inicio
-        DialogueText.text = string.Empty;
-        
+        // Antes -> DialogueText.text = string.Empty;
+        if (DialogueText != null) DialogueText.text = string.Empty;
         
         // 🔥 ELIMINADO: StartDialogue(); (No lo pongas aquí)
     }
 
     void Update()
     {
+        if (DialogueText == null || DialogueLines.Length == 0 || index >= DialogueLines.Length) return;
+        
+        if (Keyboard.current != null && (Keyboard.current.escapeKey.wasPressedThisFrame || Keyboard.current.qKey.wasPressedThisFrame))
+        {
+            CerrarDialogo();
+            return;
+        }
+
         bool clickIzquierdo = Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame;
         bool barraEspaciadora = Keyboard.current != null && Keyboard.current.spaceKey.wasPressedThisFrame;
 
@@ -50,6 +58,13 @@ public class DIalogueScript : MonoBehaviour
     {
         StopAllCoroutines(); // 🔥 NUEVO: Detiene cualquier escritura anterior por seguridad
 
+        if (DialogueLines == null || DialogueLines.Length == 0)
+        {
+            Debug.LogWarning("Este diálogo no tiene líneas de texto asignadas");
+            CerrarDialogo();
+            return;
+        }
+        
         index = 0;
         DialogueText.text = string.Empty;
         
@@ -80,14 +95,27 @@ public class DIalogueScript : MonoBehaviour
             index++;
             DialogueText.text = string.Empty;
             
-            if (SpeakerNames.Length > index) 
+            // Antes -> if (SpeakerNames.Length > index) 
+                // Antes -> SpeakerNameText.text = SpeakerNames[index];
+
+            if (SpeakerNames != null && SpeakerNames.Length > index)
+            {
                 SpeakerNameText.text = SpeakerNames[index];
+            }
 
             StartCoroutine(WriteLine());
         }
         else
         {
-            gameObject.SetActive(false);
+            // Antes -> gameObject.SetActive(false);
+            CerrarDialogo();
         }
+    }
+
+    public void CerrarDialogo()
+    {
+        StopAllCoroutines();
+        isTyping = false;
+        gameObject.SetActive(false);
     }
 }

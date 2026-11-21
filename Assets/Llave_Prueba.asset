@@ -17,7 +17,7 @@ MonoBehaviour:
   descripcion: 
   icono: {fileID: 0}
   tipoObjeto: 0
-  ancho: 1
+  ancho: 2
   alto: 1
   contenidoDocumento: 
   prefabModelo3D: {fileID: 4973445761417608859, guid: 51169733fa32dbd41b51c89ee0fa9894, type: 3}
