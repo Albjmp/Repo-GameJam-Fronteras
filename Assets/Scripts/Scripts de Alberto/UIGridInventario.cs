@@ -1,24 +1,68 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIGridInventario : MonoBehaviour
 {
     [Header("Referencias")]
     public Inventario inventario;
     public RectTransform contenedorObjetos;
+    public RectTransform contenedorCasillas;
     public GameObject prefabItemVisual;
+
+    [Header("Recursos Visuales")]
+    public Sprite spriteCasilla;
+    public Sprite spriteIconoPorDefecto;
 
     [Header("Ajuste de tamaño")]
     public float tamanoCelda = 80f;
 
     private List<GameObject> iconosInstanciados = new List<GameObject>();
 
+    private void Awake()
+    {
+        if (inventario == null)
+        {
+            inventario = FindAnyObjectByType<Inventario>();
+        }
+
+        ActualizarSpritesCasillas();
+    }
+
     private void OnEnable()
     {
+        if (inventario == null)
+        {
+            inventario = FindAnyObjectByType<Inventario>();
+        }
+
         if (inventario != null)
         {
             inventario.alActualizarInventario += RedibujarTodo;
             RedibujarTodo();
+        }
+
+        ActualizarSpritesCasillas();
+    }
+
+    public void ActualizarSpritesCasillas()
+    {
+        if (spriteCasilla == null) return;
+
+        Transform contenedor = contenedorCasillas != null ? contenedorCasillas.transform : transform.Find("Contenedor_Grid");
+        if (contenedor == null) return;
+
+        foreach (Transform hijo in contenedor)
+        {
+            // Ignoramos la capa de objetos
+            if (hijo.name.Contains("Capa_Objetos")) continue;
+
+            Image img = hijo.GetComponent<Image>();
+            if (img != null)
+            {
+                img.sprite = spriteCasilla;
+                img.color = Color.white;
+            }
         }
     }
 

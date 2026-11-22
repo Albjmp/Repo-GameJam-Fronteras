@@ -28,7 +28,22 @@ public class ItemVisualUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     {
         itemAsignado = item;
         gestorGrid = gestor;
-        imagenIcono.sprite = item.datos.icono;
+
+        if (item.datos != null && item.datos.icono != null)
+        {
+            imagenIcono.sprite = item.datos.icono;
+            imagenIcono.color = Color.white;
+        }
+        else if (gestor != null && gestor.spriteIconoPorDefecto != null)
+        {
+            imagenIcono.sprite = gestor.spriteIconoPorDefecto;
+            imagenIcono.color = Color.white;
+        }
+        else
+        {
+            imagenIcono.color = new Color(1f, 1f, 1f, 0.4f);
+        }
+
         ActualizarFormaVisual();
     }
 

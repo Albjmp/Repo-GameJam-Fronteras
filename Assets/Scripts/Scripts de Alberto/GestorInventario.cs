@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 
 public class GestorInventario : MonoBehaviour
 {
@@ -11,6 +11,7 @@ public class GestorInventario : MonoBehaviour
     [Header("Configuración de Teclas")]
     [SerializeField] private KeyCode teclaInventario = KeyCode.I;
 
+    public bool EstaAbierto => inventarioAbierto;
     private bool inventarioAbierto = false;
 
     private void Awake()
@@ -23,7 +24,30 @@ public class GestorInventario : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(teclaInventario))
+        bool presionoTeclaI = false;
+        bool presionoEscape = false;
+
+        if (Keyboard.current != null)
+        {
+            presionoTeclaI = Keyboard.current.iKey.wasPressedThisFrame;
+            presionoEscape = Keyboard.current.escapeKey.wasPressedThisFrame;
+        }
+
+        if (!presionoTeclaI && Input.GetKeyDown(teclaInventario))
+        {
+            presionoTeclaI = true;
+        }
+
+        if (!presionoEscape && Input.GetKeyDown(KeyCode.Escape))
+        {
+            presionoEscape = true;
+        }
+
+        if (presionoTeclaI)
+        {
+            AlternarInventario();
+        }
+        else if (presionoEscape && inventarioAbierto)
         {
             AlternarInventario();
         }

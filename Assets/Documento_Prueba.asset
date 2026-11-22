@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a57ab8707e5b58046979c9d5acc5c7e7, type: 3}
+  m_Name: Documento_Prueba
+  m_EditorClassIdentifier: Assembly-CSharp::ItemData
+  id: Doc_01
+  nombre: Informe Confidencial - Estacion Frontera
+  descripcion: Un expediente arrugado clasificado con sello oficial.
+  icono: {fileID: 0}
+  tipoObjeto: 1
+  ancho: 1
+  alto: 1
+  contenidoDocumento: "INFORME CLASIFICADO: ESTACIÓN FRONTERA\n\nFecha: 14 de Noviembre\nRegistro de Operaciones: Sector Subterráneo\n\nLas fluctuaciones anómalas en el sistema de energía de los túneles se han intensificado durante las últimas 48 horas. Se ha restringido el acceso al personal no autorizado.\n\nTodo documento y reporte debe ser archivado en las carpetas de seguridad correspondientes antes de la evacuación del personal civil.\n\nFirma:\nComandancia de Guardia."
+  prefabModelo3D: {fileID: 0}
