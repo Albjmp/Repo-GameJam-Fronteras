@@ -6,6 +6,7 @@ public class GestorInventario : MonoBehaviour
     [Header("Referencias de UI")]
     [SerializeField] private GameObject panelInventario;
     public GameObject barraLinternaUI;
+    public GameObject barraEstaminaUI;
 
     [Header("Configuración de Teclas")]
     [SerializeField] private KeyCode teclaInventario = KeyCode.I;
@@ -52,6 +53,11 @@ public class GestorInventario : MonoBehaviour
             barraLinternaUI.SetActive(false);
         }
 
+        if (barraEstaminaUI != null)
+        {
+            barraEstaminaUI.SetActive(false);
+        }
+
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
@@ -63,11 +69,28 @@ public class GestorInventario : MonoBehaviour
         Time.timeScale = 1f;
 
         ControladorJugador jugador = FindAnyObjectByType<ControladorJugador>();
-        if (jugador != null && jugador.protagonistaActivo == ControladorJugador.Protagonista.Ivo)
+        //if (jugador != null && jugador.protagonistaActivo == ControladorJugador.Protagonista.Ivo)
+        //{
+            //if (barraLinternaUI != null)
+            //{
+                //barraLinternaUI.SetActive(true);
+            //}
+            //if (barraEstaminaUI != null)
+            //{
+                //barraEstaminaUI.SetActive(true);
+            //}
+        //}
+
+        if (jugador != null)
         {
             if (barraLinternaUI != null)
             {
-                barraLinternaUI.SetActive(true);
+                barraLinternaUI.SetActive(jugador.protagonistaActivo == ControladorJugador.Protagonista.Ivo);
+            }
+
+            if (barraEstaminaUI != null)
+            {
+                barraEstaminaUI.SetActive(jugador.protagonistaActivo == ControladorJugador.Protagonista.Sean);
             }
         }
         

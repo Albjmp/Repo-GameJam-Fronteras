@@ -21,4 +21,16 @@ public class PerseguidorConstante : MonoBehaviour
             agente.SetDestination(jugador.position);
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            SistemaVidaJugador vida = other.GetComponent<SistemaVidaJugador>();
+            if (vida != null)
+            {
+                vida.RecibirGolpe();
+            }
+        }
+    }
 }

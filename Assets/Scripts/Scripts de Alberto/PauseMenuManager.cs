@@ -11,6 +11,7 @@ public class PauseMenuManager : MonoBehaviour
 
     [Header("Interfaz Externa a Ocultar")]
     public GameObject barraLinternaUI;
+    public GameObject barraEstaminaUI;
 
     private bool isPaused = false;
 
@@ -47,6 +48,11 @@ public class PauseMenuManager : MonoBehaviour
             barraLinternaUI.SetActive(false);
         }
 
+        if (barraEstaminaUI != null)
+        {
+            barraEstaminaUI.SetActive(false);
+        }
+
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
     }
@@ -60,11 +66,28 @@ public class PauseMenuManager : MonoBehaviour
         isPaused = false;
 
         ControladorJugador jugador = FindAnyObjectByType<ControladorJugador>();
-        if (jugador != null && jugador.protagonistaActivo == ControladorJugador.Protagonista.Ivo)
+        //if (jugador != null && jugador.protagonistaActivo == ControladorJugador.Protagonista.Ivo)
+        //{
+            //if (barraLinternaUI != null)
+            //{
+                //barraLinternaUI.SetActive(true);
+            //}
+            //if (barraEstaminaUI != null)
+            //{
+                //barraEstaminaUI.SetActive(true);
+            //}
+        //}
+
+        if (jugador != null)
         {
             if (barraLinternaUI != null)
             {
-                barraLinternaUI.SetActive(true);
+                barraLinternaUI.SetActive(jugador.protagonistaActivo == ControladorJugador.Protagonista.Ivo);
+            }
+
+            if (barraEstaminaUI != null)
+            {
+                barraEstaminaUI.SetActive(jugador.protagonistaActivo == ControladorJugador.Protagonista.Sean);
             }
         }
 

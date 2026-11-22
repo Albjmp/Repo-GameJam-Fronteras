@@ -39,4 +39,16 @@ public class EnemigoVigilante : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, rangoDeVision);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            SistemaVidaJugador vida = other.GetComponent<SistemaVidaJugador>();
+            if (vida != null)
+            {
+                vida.RecibirGolpe();
+            }
+        }
+    }
 }
