@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using Unity.VisualScripting;
 
 public class ControladorJugador : MonoBehaviour
 {
@@ -23,6 +24,8 @@ public class ControladorJugador : MonoBehaviour
     public float consumoEstamina = 25f;
     public float recargaEstamina = 15f;
     public Slider barraEstaminaUI;
+    public float alturaSaltoSean = 1.2f;
+    private float bufferSaltoTimer = 0.5f;
 
     private float estaminaActual;
     private bool agotado = false;
@@ -177,6 +180,25 @@ public class ControladorJugador : MonoBehaviour
         {
             velocidadGravedad.y = -2f;
         }
+
+        if (protagonistaActivo == Protagonista.Sean)
+        {
+            if (Keyboard.current != null && Keyboard.current.spaceKey.wasPressedThisFrame)
+            {
+                bufferSaltoTimer = 0.65f;
+            } else if (bufferSaltoTimer > 0.5f)
+            {
+                bufferSaltoTimer -= Time.deltaTime;
+            }
+            
+            if (characterController.isGrounded && bufferSaltoTimer > 0.5f)
+            {
+                velocidadGravedad.y= Mathf.Sqrt(alturaSaltoSean * -2f * gravedad);
+                bufferSaltoTimer = 0.5f;
+            }
+        }
+        
+        
 
         velocidadGravedad.y += gravedad * Time.deltaTime;
         characterController.Move(velocidadGravedad * Time.deltaTime);
