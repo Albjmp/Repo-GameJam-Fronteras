@@ -11,8 +11,11 @@ public class InteraccionJugador : MonoBehaviour
 
     [Header("Configuración")]
     public float distanciaRecogida = 3f;
+    public Color colorContorno = Color.yellow;
+    public float grosorContorno = 5f;
 
     private ObjetoRecogible objetoApuntado;
+    private Outline contornoActual;
 
     private void Update()
     {
@@ -37,7 +40,13 @@ public class InteraccionJugador : MonoBehaviour
 
             if (recogible != null && recogible.datosObjeto != null)
             {
-                objetoApuntado = recogible;
+                if (objetoApuntado != recogible)
+                {
+                    ApagarContornoAnterior();
+                    objetoApuntado = recogible;
+                    EncenderContorno(recogible.gameObject);
+                }
+                
                 MostrarAviso("Presiona [E] para recoger: " + recogible.datosObjeto.nombre);
                 return;
             }
@@ -45,8 +54,30 @@ public class InteraccionJugador : MonoBehaviour
 
         if (objetoApuntado != null)
         {
+            ApagarContornoAnterior();
             objetoApuntado = null;
             OcultarAviso();
+        }
+    }
+
+    private void EncenderContorno(GameObject objetivo)
+    {
+        contornoActual = objetivo.GetComponent<Outline>();
+        if (contornoActual == null)
+        {
+            contornoActual = objetivo.AddComponent<Outline>();
+            contornoActual.OutlineColor = colorContorno;
+            contornoActual.OutlineWidth = grosorContorno;
+        }
+        contornoActual.enabled = true;
+    }
+
+    private void ApagarContornoAnterior()
+    {
+        if (contornoActual != null)
+        {
+            contornoActual.enabled = false;
+            contornoActual = null;
         }
     }
 
@@ -58,6 +89,7 @@ public class InteraccionJugador : MonoBehaviour
         {
             Destroy(objetoApuntado.gameObject);
             objetoApuntado = null;
+            contornoActual = null;
             OcultarAviso();
         } else
         {
