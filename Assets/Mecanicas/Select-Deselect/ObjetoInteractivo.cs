@@ -143,7 +143,7 @@ public class ObjetoInteractivo : MonoBehaviour
         else
         {
 #if UNITY_2023_1_OR_NEWER
-            PuzzleSecuencia gestorEnEscena = FindFirstObjectByType<PuzzleSecuencia>();
+            PuzzleSecuencia gestorEnEscena = FindAnyObjectByType<PuzzleSecuencia>();
 #else
             PuzzleSecuencia gestorEnEscena = FindObjectOfType<PuzzleSecuencia>();
 #endif
@@ -172,10 +172,11 @@ public class ObjetoInteractivo : MonoBehaviour
 
         if (itemData != null)
         {
+            Inventario inventario = Inventario.Instance != null ? Inventario.Instance :
 #if UNITY_2023_1_OR_NEWER
-            Inventario inventario = FindFirstObjectByType<Inventario>();
+            FindAnyObjectByType<Inventario>();
 #else
-            Inventario inventario = FindObjectOfType<Inventario>();
+            FindObjectOfType<Inventario>();
 #endif
             if (inventario != null)
             {

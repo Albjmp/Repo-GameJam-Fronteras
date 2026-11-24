@@ -6,7 +6,8 @@ using TMPro;
 public class UIDocumentosInventario : MonoBehaviour
 {
     [Header("Referencias Generales")]
-    public Inventario inventario;
+    // Desacoplado del Inspector: resuelto automáticamente por Singleton o búsqueda de escena
+    [HideInInspector] public Inventario inventario;
     public RectTransform contenedorDocumentos;
     public TextMeshProUGUI textoLecturaDocumento;
     public TextMeshProUGUI textoTituloDocumento;
@@ -24,16 +25,20 @@ public class UIDocumentosInventario : MonoBehaviour
     {
         if (inventario == null)
         {
-            inventario = FindAnyObjectByType<Inventario>();
+            inventario = Inventario.Instance != null ? Inventario.Instance : FindAnyObjectByType<Inventario>();
         }
+
+        ConfigurarViewport();
     }
 
     private void OnEnable()
     {
         if (inventario == null)
         {
-            inventario = FindAnyObjectByType<Inventario>();
+            inventario = Inventario.Instance != null ? Inventario.Instance : FindAnyObjectByType<Inventario>();
         }
+
+        ConfigurarViewport();
 
         if (inventario != null)
         {
@@ -41,6 +46,24 @@ public class UIDocumentosInventario : MonoBehaviour
         }
 
         ActualizarDocumentos();
+    }
+
+    /// <summary>
+    /// Asegura que el Viewport del ScrollRect ocupe todo el espacio disponible.
+    /// Si el Viewport queda con tamaño cero, las casillas de documentos no se ven.
+    /// </summary>
+    private void ConfigurarViewport()
+    {
+        if (contenedorDocumentos == null) return;
+
+        RectTransform viewport = contenedorDocumentos.parent as RectTransform;
+        if (viewport == null) return;
+
+        viewport.anchorMin = Vector2.zero;
+        viewport.anchorMax = Vector2.one;
+        viewport.pivot = new Vector2(0f, 1f);
+        viewport.anchoredPosition = Vector2.zero;
+        viewport.sizeDelta = Vector2.zero;
     }
 
     private void OnDisable()
@@ -166,8 +189,10 @@ public class UIDocumentosInventario : MonoBehaviour
         tmpTexto.fontSize = 20f;
         tmpTexto.color = Color.white;
         tmpTexto.alignment = TextAlignmentOptions.MidlineLeft;
-        tmpTexto.enableWordWrapping = true;
-
+        
+        // Nota: enableWordWrapping está obsoleto en versiones nuevas de TMP, 
+        // pero lo dejo por compatibilidad. Si te da error, cámbialo a textWrappingMode = TextWrappingModes.Normal;
+       tmpTexto.textWrappingMode = TextWrappingModes.Normal;
         CasillaDocumentoUI ui = nuevaCasilla.AddComponent<CasillaDocumentoUI>();
         ui.imagenCasilla = imgCasilla;
         ui.imagenIcono = imgIcono;
@@ -182,12 +207,13 @@ public class UIDocumentosInventario : MonoBehaviour
         if (doc == null) return;
         documentoSeleccionado = doc;
 
-        // Resaltar casilla activa
+        // --- ARREGLO BUG #2 ---
+        // Ahora comparamos el ItemData real, no el texto del nombre.
         foreach (CasillaDocumentoUI casilla in casillasInstanciadas)
         {
             if (casilla != null)
             {
-                casilla.EstablecerSeleccionado(casilla.textoTitulo != null && casilla.textoTitulo.text == doc.nombre);
+                casilla.EstablecerSeleccionado(casilla.DatosDocumento == doc);
             }
         }
 

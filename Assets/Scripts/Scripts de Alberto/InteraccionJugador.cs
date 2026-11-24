@@ -1,13 +1,15 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
+using UnityEngine.InputSystem; // Necesario para el nuevo Input System
 using TMPro;
 
 public class InteraccionJugador : MonoBehaviour
 {
     [Header("Referencias")]
     public Camera camaraJugador;
-    public Inventario inventarioJugador;
     public TextMeshProUGUI textoAvisoUI;
+
+    // Desacoplado del Inspector: se obtiene automáticamente del GameObject o por Singleton
+    [HideInInspector] public Inventario inventarioJugador;
 
     [Header("Configuración")]
     public float distanciaRecogida = 3f;
@@ -17,16 +19,47 @@ public class InteraccionJugador : MonoBehaviour
     private ObjetoRecogible objetoApuntado;
     private Outline contornoActual;
 
+    private void Start()
+    {
+        if (camaraJugador == null) camaraJugador = Camera.main;
+
+        if (inventarioJugador == null)
+        {
+            inventarioJugador = GetComponent<Inventario>();
+            if (inventarioJugador == null)
+            {
+                inventarioJugador = Inventario.Instance != null ? Inventario.Instance : FindAnyObjectByType<Inventario>();
+            }
+        }
+    }
+
     private void Update()
     {
         if (Time.timeScale == 0f) return;
 
         DetectarObjetoEnMira();
 
-        if (objetoApuntado != null && Keyboard.current != null && Keyboard.current.eKey.wasPressedThisFrame)
+        // ARREGLO BUG #3: Comprobación de tecla E compatible con ambos sistemas
+        if (objetoApuntado != null && InteractuoPresionado())
         {
             IntentarRecoger();
         }
+    }
+
+    // Método auxiliar para detectar la E
+    private bool InteractuoPresionado()
+    {
+        bool presionado = false;
+        
+        #if ENABLE_INPUT_SYSTEM
+        if (Keyboard.current != null && Keyboard.current.eKey.wasPressedThisFrame) presionado = true;
+        #endif
+        
+        #if ENABLE_LEGACY_INPUT_MANAGER
+        if (Input.GetKeyDown(KeyCode.E)) presionado = true;
+        #endif
+        
+        return presionado;
     }
 
     private void DetectarObjetoEnMira()
@@ -83,7 +116,14 @@ public class InteraccionJugador : MonoBehaviour
 
     private void IntentarRecoger()
     {
-        bool guardadoConExito = inventarioJugador.RecogerObjeto(objetoApuntado.datosObjeto);
+        Inventario inv = inventarioJugador != null ? inventarioJugador : (Inventario.Instance != null ? Inventario.Instance : GetComponent<Inventario>());
+        if (inv == null)
+        {
+            Debug.LogError("[InteraccionJugador] No se encontró el componente Inventario en la escena.");
+            return;
+        }
+
+        bool guardadoConExito = inv.RecogerObjeto(objetoApuntado.datosObjeto);
 
         if (guardadoConExito)
         {

@@ -109,7 +109,7 @@ public class NavegacionInventario : MonoBehaviour
         if (pantallaGeneral != null)
         {
             UIGridInventario grid = pantallaGeneral.GetComponent<UIGridInventario>();
-            if (grid != null) grid.RedibujarTodo();
+            if (grid != null) grid.Refrescar();
         }
     }
 

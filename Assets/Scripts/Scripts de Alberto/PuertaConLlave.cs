@@ -15,7 +15,8 @@ public class PuertaConLlave : MonoBehaviour
     [Header("Interfaz de usuario")]
     public TextMeshProUGUI textoAvisoUI;
 
-    public Inventario inventarioJugador;
+    // Desacoplado de los inspectores: se resuelve automáticamente (Singleton / Trigger / Búsqueda)
+    [HideInInspector] public Inventario inventarioJugador;
     private bool jugadorCerca = false;
     private bool estaAbierta = false;
     private Quaternion rotacionCerrada;
@@ -28,8 +29,16 @@ public class PuertaConLlave : MonoBehaviour
 
         if (inventarioJugador == null)
         {
-            inventarioJugador = FindAnyObjectByType<Inventario>();
+            inventarioJugador = ObtenerInventario();
         }
+    }
+
+    public Inventario ObtenerInventario()
+    {
+        if (inventarioJugador != null) return inventarioJugador;
+        if (Inventario.Instance != null) return Inventario.Instance;
+        inventarioJugador = FindAnyObjectByType<Inventario>();
+        return inventarioJugador;
     }
 
     private void Update()
@@ -37,10 +46,22 @@ public class PuertaConLlave : MonoBehaviour
         Quaternion objetivo = estaAbierta ? rotacionAbierta : rotacionCerrada;
         transform.rotation = Quaternion.Slerp(transform.rotation, objetivo, Time.deltaTime * velocidadApertura);
 
-        if (jugadorCerca && Keyboard.current != null && Keyboard.current.eKey.wasPressedThisFrame)
+        if (jugadorCerca && InteractuoPresionado())
         {
             IntentarAbrir();
         }
+    }
+
+    private bool InteractuoPresionado()
+    {
+        bool presionado = false;
+        #if ENABLE_INPUT_SYSTEM
+        if (Keyboard.current != null && Keyboard.current.eKey.wasPressedThisFrame) presionado = true;
+        #endif
+        #if ENABLE_LEGACY_INPUT_MANAGER
+        if (Input.GetKeyDown(KeyCode.E)) presionado = true;
+        #endif
+        return presionado;
     }
 
     private void IntentarAbrir()
@@ -52,21 +73,31 @@ public class PuertaConLlave : MonoBehaviour
             return;
         }
 
-        if (inventarioJugador == null) Debug.LogError("ERROR: La puerta no encontró el script Inventario");
-        if (llaveRequerida == null) Debug.LogError("ERROR: No asignaste ninguna llave en el Inspector de la puerta");
+        Inventario inv = ObtenerInventario();
+        if (inv == null) 
+        {
+            Debug.LogError("ERROR: La puerta no encontró el script Inventario en la escena");
+            return; 
+        }
+        
+        if (llaveRequerida == null) 
+        {
+            Debug.LogError("ERROR: No asignaste ninguna llave en el Inspector de la puerta");
+            return;
+        }
 
-        if (inventarioJugador != null && inventarioJugador.TieneObjeto(llaveRequerida))
+        if (inv.TieneObjeto(llaveRequerida))
         {
             estaAbierta = true;
             ActualizarTexto("Presiona [E] para cerrar");
 
             if (consumirLlaveAlUsar)
             {
-                inventarioJugador.EliminarObjeto(llaveRequerida);
+                inv.EliminarObjeto(llaveRequerida);
             }
         } else
         {
-            ActualizarTexto("Cerrada.Necesitas: " + llaveRequerida.nombre);
+            ActualizarTexto("Cerrada. Necesitas: " + llaveRequerida.nombre);
         }
     }
 
@@ -75,6 +106,14 @@ public class PuertaConLlave : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             jugadorCerca = true;
+            if (inventarioJugador == null)
+            {
+                inventarioJugador = other.GetComponent<Inventario>();
+                if (inventarioJugador == null)
+                {
+                    inventarioJugador = ObtenerInventario();
+                }
+            }
             if (textoAvisoUI != null)
             {
                 textoAvisoUI.gameObject.SetActive(true);

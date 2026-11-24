@@ -20,8 +20,17 @@ public class ItemVisualUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     private void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
-        canvasGroup = gameObject.AddComponent<CanvasGroup>();
+
+        // ARREGLO BUG 4: Evitar duplicar el CanvasGroup
+        canvasGroup = GetComponent<CanvasGroup>();
+        if (canvasGroup == null) canvasGroup = gameObject.AddComponent<CanvasGroup>();
+
         canvasPadre = GetComponentInParent<Canvas>();
+
+        // Forzar pivot y ancla en esquina superior-izquierda para alinearse con el grid
+        rectTransform.pivot = new Vector2(0f, 1f);
+        rectTransform.anchorMin = new Vector2(0f, 1f);
+        rectTransform.anchorMax = new Vector2(0f, 1f);
     }
 
     public void Configurar(ObjetoEnGrid item, UIGridInventario gestor)
@@ -49,12 +58,29 @@ public class ItemVisualUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 
     public void ActualizarFormaVisual()
     {
-        float tamCelda = gestorGrid.tamanoCelda;
+        if (itemAsignado == null || itemAsignado.datos == null || gestorGrid == null) return;
 
-        rectTransform.sizeDelta = new Vector2(itemAsignado.AnchoActual * tamCelda, itemAsignado.AltoActual * tamCelda);
+        float tamCelda = gestorGrid.tamanoCelda;
+        float esp = gestorGrid.espaciado;
+
+        // Tamaño del área ocupada (si está rotado, ancho y alto se intercambian)
+        float anchoTotal = itemAsignado.AnchoActual * tamCelda + (itemAsignado.AnchoActual - 1) * esp;
+        float altoTotal = itemAsignado.AltoActual * tamCelda + (itemAsignado.AltoActual - 1) * esp;
+        rectTransform.sizeDelta = new Vector2(anchoTotal, altoTotal);
 
         RectTransform rectImagen = imagenIcono.GetComponent<RectTransform>();
-        rectImagen.sizeDelta = new Vector2(itemAsignado.datos.ancho * tamCelda, itemAsignado.datos.alto * tamCelda);
+
+        // La imagen conserva el tamaño original del objeto y luego se gira.
+        // Así, al rotarla 90°, ocupa exactamente el área visual del objeto.
+        float anchoBase = itemAsignado.datos.ancho * tamCelda + (itemAsignado.datos.ancho - 1) * esp;
+        float altoBase = itemAsignado.datos.alto * tamCelda + (itemAsignado.datos.alto - 1) * esp;
+        rectImagen.anchorMin = new Vector2(0.5f, 0.5f);
+        rectImagen.anchorMax = new Vector2(0.5f, 0.5f);
+        rectImagen.pivot = new Vector2(0.5f, 0.5f);
+        rectImagen.anchoredPosition = Vector2.zero;
+        rectImagen.sizeDelta = new Vector2(anchoBase, altoBase);
+
+        // Aplicamos rotación visual
         rectImagen.localEulerAngles = new Vector3(0, 0, itemAsignado.rotado ? -90f : 0f);
     }
 
@@ -93,7 +119,13 @@ public class ItemVisualUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
         canvasGroup.alpha = 1f;
         canvasGroup.blocksRaycasts = true;
 
+        if (gestorGrid == null || gestorGrid.inventario == null || itemAsignado == null) return;
+
         Vector2Int celdaDestino = gestorGrid.ObtenerCoordenadaCelda(rectTransform.anchoredPosition);
+
+        // Ajustamos al último hueco válido para que el objeto no salte al borde y se pierda el drop.
+        celdaDestino.x = Mathf.Clamp(celdaDestino.x, 0, Mathf.Max(0, gestorGrid.inventario.columnasGrid - itemAsignado.AnchoActual));
+        celdaDestino.y = Mathf.Clamp(celdaDestino.y, 0, Mathf.Max(0, gestorGrid.inventario.filasGrid - itemAsignado.AltoActual));
 
         if (gestorGrid.inventario.PuedeCaber(celdaDestino.x, celdaDestino.y, itemAsignado.AnchoActual, itemAsignado.AltoActual))
         {

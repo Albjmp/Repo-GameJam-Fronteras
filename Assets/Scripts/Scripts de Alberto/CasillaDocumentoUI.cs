@@ -17,6 +17,11 @@ public class CasillaDocumentoUI : MonoBehaviour
     private ItemData datosDocumento;
     private System.Action<ItemData> callbackSeleccion;
 
+    /// <summary>
+    /// Expone el ItemData asignado para comparaciones por referencia.
+    /// </summary>
+    public ItemData DatosDocumento => datosDocumento;
+
     private void Awake()
     {
         if (botonCasilla == null)
@@ -80,4 +85,5 @@ public class CasillaDocumentoUI : MonoBehaviour
             callbackSeleccion?.Invoke(datosDocumento);
         }
     }
+
 }

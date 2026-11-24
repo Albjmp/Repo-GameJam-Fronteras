@@ -12,14 +12,23 @@ public class ObjetoEnGrid
     public int AnchoActual => rotado ? datos.alto : datos.ancho;
     public int AltoActual => rotado ? datos.ancho : datos.alto;
 }
+
 public class Inventario : MonoBehaviour
 {
-    public List<ItemData> listaDocumentos = new List<ItemData>();
-    public List<ObjetoEnGrid> objetosGenerales = new List<ObjetoEnGrid>();
+    public static Inventario Instance { get; private set; }
+    public static Inventario Instancia => Instance;
 
     [Header("Configuración Grid General")]
-    public int columnasGrid = 10;
-    public int filasGrid = 6;
+    [Tooltip("Cantidad de columnas disponibles en el grid de objetos.")]
+    public int columnasGrid = 5;
+    [Tooltip("Cantidad de filas disponibles en el grid de objetos.")]
+    public int filasGrid = 5;
+
+    [Header("Contenido del Inventario (Tiempo de Ejecución)")]
+    [Tooltip("Documentos recolectados.")]
+    public List<ItemData> listaDocumentos = new List<ItemData>();
+    [Tooltip("Objetos colocados actualmente en el grid.")]
+    public List<ObjetoEnGrid> objetosGenerales = new List<ObjetoEnGrid>();
 
     private ItemData[,] gridInventario;
 
@@ -27,7 +36,23 @@ public class Inventario : MonoBehaviour
     
     private void Awake()
     {
+        if (Instance != null && Instance != this)
+        {
+            Debug.LogWarning("[Inventario] Se encontró otra instancia de Inventario. Destruyendo la duplicada en " + gameObject.name);
+            Destroy(this);
+            return;
+        }
+        Instance = this;
+
         gridInventario = new ItemData[columnasGrid, filasGrid];
+    }
+
+    private void OnDestroy()
+    {
+        if (Instance == this)
+        {
+            Instance = null;
+        }
     }
 
     public bool RecogerObjeto(ItemData nuevoObjeto)
@@ -35,7 +60,6 @@ public class Inventario : MonoBehaviour
         if (nuevoObjeto.tipoObjeto == ItemType.Documento)
         {
             listaDocumentos.Add(nuevoObjeto);
-            Debug.Log($"Documento '{nuevoObjeto.nombre}' guardado sin límites");
             alActualizarInventario?.Invoke();
             return true;
         } else
@@ -74,41 +98,23 @@ public class Inventario : MonoBehaviour
                 }
             }
         }
-        Debug.Log("No hay espacio suficiente en el inventario general");
         return false;
     }
 
     public bool PuedeCaber(int inicioX, int inicioY, int ancho, int alto)
     {
         if (inicioX < 0 || inicioY < 0 || inicioX + ancho > columnasGrid || inicioY + alto > filasGrid)
-        {
             return false;
-        }
 
         for (int x = inicioX; x < inicioX + ancho; x++)
         {
             for (int y = inicioY; y < inicioY + alto; y++)
             {
-                if (gridInventario[x, y] != null)
-                {
-                    return false;
-                }
+                if (gridInventario[x, y] != null) return false;
             }
         }
         return true;
     }
-
-    //private void AsignarEspacioGrid(ItemData objeto, int inicioX, int inicioY)
-    //{
-        //for (int x = inicioX; x < inicioX + objeto.ancho; x++)
-        //{
-            //for (int y = inicioY; y < inicioY + objeto.alto; y++)
-            //{
-                //gridInventario[x, y] = objeto;
-            //}
-        //}
-        //Debug.Log($"Objeto '{objeto.nombre}' organizado en el grid en la posición ({inicioX}, {inicioY})");
-    //}
 
     public void OcuparCeldas(ObjetoEnGrid item)
     {
@@ -132,9 +138,6 @@ public class Inventario : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Elimina o descarta un objeto del inventario (tanto si es Documento como si está en el Grid).
-    /// </summary>
     public bool DescartarObjeto(ItemData objeto)
     {
         if (objeto == null) return false;
@@ -143,62 +146,29 @@ public class Inventario : MonoBehaviour
         {
             if (listaDocumentos.Remove(objeto))
             {
-                Debug.Log($"Documento '{objeto.nombre}' descartado del inventario.");
+                alActualizarInventario?.Invoke(); // Refrescar UI
                 return true;
             }
             return false;
         }
         else
         {
-            bool encontrado = false;
-            for (int y = 0; y < filasGrid; y++)
+            // ARREGLO BUG 1: Buscar el objeto en la lista real, liberar celdas y quitarlo
+            ObjetoEnGrid objetoEncontrado = objetosGenerales.Find(item => item.datos == objeto);
+            if (objetoEncontrado != null)
             {
-                for (int x = 0; x < columnasGrid; x++)
-                {
-                    if (gridInventario[x, y] == objeto)
-                    {
-                        gridInventario[x, y] = null;
-                        encontrado = true;
-                    }
-                }
+                LiberarCeldas(objetoEncontrado);
+                objetosGenerales.Remove(objetoEncontrado);
+                alActualizarInventario?.Invoke(); // Refrescar UI
+                return true;
             }
-
-            if (encontrado)
-            {
-                Debug.Log($"Objeto '{objeto.nombre}' descartado del grid del inventario.");
-            }
-            return encontrado;
+            return false;
         }
-    }
-
-    /// <summary>
-    /// Elimina o descarta el objeto que ocupe una celda específica del grid.
-    /// </summary>
-    public bool DescartarObjetoEnPosicion(int x, int y)
-    {
-        if (x < 0 || x >= columnasGrid || y < 0 || y >= filasGrid) return false;
-
-        ItemData obj = gridInventario[x, y];
-        if (obj == null) return false;
-
-        return DescartarObjeto(obj);
     }
 
     public bool TieneObjeto(ItemData objetoBuscado)
     {
         return objetosGenerales.Exists(item => item.datos == objetoBuscado);
-        
-        //for (int x = 0; x < columnasGrid; x++)
-        //{
-            //for (int y = 0; y < filasGrid; y++)
-            //{
-                //if (gridInventario[x, y] == objetoBuscado)
-                //{
-                    //return true;
-                //}
-            //}
-        //}
-        //return false;
     }
 
     public void EliminarObjeto(ItemData objetoAEliminar)
@@ -210,17 +180,5 @@ public class Inventario : MonoBehaviour
             objetosGenerales.Remove(encontrado);
             alActualizarInventario?.Invoke();
         }
-        
-        
-        //for (int x = 0; x < columnasGrid; x++)
-        //{
-            //for (int y = 0; y < filasGrid; y++)
-            //{
-               // if (gridInventario[x, y] == objetoAEliminar)
-                //{
-                //    gridInventario[x, y] = null;
-                //}
-           // }
-       // }
     }
 }
