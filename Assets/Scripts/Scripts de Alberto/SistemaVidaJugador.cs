@@ -2,7 +2,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
-using Unity.VisualScripting;
 
 public class SistemaVidaJugador : MonoBehaviour
 {
@@ -24,7 +23,6 @@ public class SistemaVidaJugador : MonoBehaviour
     [Tooltip("Asigna 6 sprites en orden: [0] = 0 vidas, [1] = 1 vida, [2] = 2 vidas, [3] = 3 vidas, [4] = 4 vidas, [5] = Vida completa")]
     public Sprite[] spritesDeVida = new Sprite[6];
 
-
     private void Start()
     {
         golpesRecibidos = 0;
@@ -33,6 +31,8 @@ public class SistemaVidaJugador : MonoBehaviour
 
     private void Update()
     {
+        if (Time.timeScale == 0f || ControladorCinematica.EnCinematica) return;
+
         if (temporizadorInvulnerable > 0f)
         {
             temporizadorInvulnerable -= Time.deltaTime;
@@ -47,6 +47,7 @@ public class SistemaVidaJugador : MonoBehaviour
 
     public void RecibirGolpe()
     {
+        if (Time.timeScale == 0f || ControladorCinematica.EnCinematica) return;
         if (temporizadorInvulnerable > 0f) return;
 
         golpesRecibidos++;
@@ -81,6 +82,7 @@ public class SistemaVidaJugador : MonoBehaviour
 
     private void ReiniciarNivel()
     {
+        AudioListener.pause = false;
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
