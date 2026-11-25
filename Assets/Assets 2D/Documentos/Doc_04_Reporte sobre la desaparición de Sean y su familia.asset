@@ -15,20 +15,10 @@ MonoBehaviour:
   id: doc_04
   nombre: "Reporte sobre la desaparici\xF3n de Sean y su familia"
   icono: {fileID: 21300000, guid: e21309f2d8a8c064e8b15effaa4aaede, type: 3}
-  descripcion: "Documento 4. Reporte sobre la desaparici\xF3n de Sea y su familia\r\nReporte
-    de incidente\r\nUBICACI\xD3N SUGERIDA: ARCHIVO CERCANO A LA OFICINA\r\n\r\nREPORTE
-    DE INCIDENTE\r\n\r\nAsunto: Desaparici\xF3n de un menor y separaci\xF3n familiar.\r\nLugar:
-    Darsenia.\r\nEstado del caso: Sin resolver.\r\n\r\nDescripci\xF3n de los hechos:\r\n\r\nDe
-    acuerdo con la informaci\xF3n recopilada, una familia intentaba abandonar el
-    pa\xEDs mediante una ruta de traslado no autorizada.\r\n\r\nDurante el trayecto
-    se produjo un incidente con individuos vinculados a la operaci\xF3n clandestina.
-    Las circunstancias exactas todav\xEDa no han podido esclarecerse.\r\n\r\nComo
-    consecuencia del acontecimiento, el menor identificado como Sea fue separado
-    de sus padres.\r\n\r\nLos testimonios disponibles presentan contradicciones y
-    no ha sido posible establecer con certeza qu\xE9 ocurri\xF3 inmediatamente despu\xE9s
-    del incidente.\r\n\r\nSituaci\xF3n actual:\r\n- Menor: Sea. Paradero desconocido.\r\n-
-    Padre: Desaparecido.\r\n- Madre: Desaparecida.\r\n- Estado de la investigaci\xF3n:
-    Sin informaci\xF3n confirmada sobre la ubicaci\xF3n de los miembros de la familia.\r\nObservaci\xF3n:
-    Se solicita mantener abierto el caso hasta obtener nuevos datos que permitan
-    esclarecer lo sucedido"
+  descripcion: "Reporte de Desaparici\xF3n de Sea y su Familia\n\nUna familia intentaba
+    abandonar Darsenia por una ruta clandestina cuando ocurri\xF3 un incidente con
+    individuos vinculados al traslado. Durante el suceso, Sea fue separado de sus
+    padres, cuyo paradero tambi\xE9n se desconoce.\n\nEstado del caso: Sin resolver.
+    No hay informaci\xF3n confirmada sobre el destino de la familia."
   tipo: 1
+  prefabMundo: {fileID: 0}
