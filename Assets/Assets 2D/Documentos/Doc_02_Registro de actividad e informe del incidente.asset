@@ -15,17 +15,11 @@ MonoBehaviour:
   id: doc_02
   nombre: Registro de actividad e informe del incidente
   icono: {fileID: 21300000, guid: e21309f2d8a8c064e8b15effaa4aaede, type: 3}
-  descripcion: "Documento 2. Registro de actividad e informe del incidente\r\nRegistro
-    cient\xEDfico\r\nUBICACI\xD3N SUGERIDA: SALA DE CONTROL O ARCHIVO T\xC9CNICO\r\n\r\nREGISTRO
-    DE ACTIVIDAD ENERG\xC9TICA\r\n\r\nFecha: 1993\r\nHora del incidente: 12:13\r\n\r\nDurante
-    una de las pruebas del sistema experimental, los equipos de monitoreo registraron
-    una variaci\xF3n inesperada en los par\xE1metros de funcionamiento.\r\n\r\nA
-    las 12:13, la estabilidad de la conexi\xF3n comenz\xF3 a fluctuar. Los sensores
-    detectaron lecturas que no correspond\xEDan con las condiciones espaciales previstas
-    para el experimento.\r\n\r\nPoco despu\xE9s, se registraron fallos en los sistemas
-    el\xE9ctricos y de comunicaci\xF3n. El personal presente inform\xF3 sobre alteraciones
-    en diferentes sectores de las instalaciones.\r\n\r\nSe orden\xF3 la suspensi\xF3n
-    inmediata de la prueba y la evacuaci\xF3n del personal.\r\n\r\nResultado: Proyecto
-    suspendido. Instalaciones cerradas hasta nuevo aviso.\r\n\r\nObservaci\xF3n final:
-    No se ha podido determinar el origen exacto de la alteraci\xF3n."
+  descripcion: "Registro de Actividad Energ\xE9tica \u2014 1993\n\nDurante una prueba
+    experimental, a las 12:13, se detect\xF3 una fluctuaci\xF3n inesperada en la
+    conexi\xF3n espacial. Esto provoc\xF3 fallos el\xE9ctricos, p\xE9rdida de comunicaci\xF3n
+    y alteraciones en las instalaciones.\n\nSe suspendi\xF3 el experimento y se evacu\xF3
+    al personal.\n\nResultado: Proyecto suspendido e instalaciones cerradas. El origen
+    de la anomal\xEDa sigue siendo desconocido."
   tipo: 1
+  prefabMundo: {fileID: 0}

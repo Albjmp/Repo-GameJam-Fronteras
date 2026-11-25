@@ -15,17 +15,10 @@ MonoBehaviour:
   id: doc_03
   nombre: "Recorte de peri\xF3dico: situaci\xF3n de Darsenia"
   icono: {fileID: 21300000, guid: e21309f2d8a8c064e8b15effaa4aaede, type: 3}
-  descripcion: "Documento 3. Recorte de peri\xF3dico: situaci\xF3n de Darsenia\r\nRealidad
-    de Sea\r\nUBICACI\xD3N SUGERIDA: HABITACI\xD3N SECUNDARIA\r\n\r\nDARSENIA: LA
-    CRISIS CONTIN\xDAA Y CADA VEZ M\xC1S FAMILIAS BUSCAN ABANDONAR EL PA\xCDS\r\n\r\nLa
-    situaci\xF3n econ\xF3mica y pol\xEDtica de Darsenia contin\xFAa deterior\xE1ndose.
-    La escasez de recursos, el aumento de la delincuencia y las tensiones provocadas
-    por el conflicto entre naciones vecinas han complicado las condiciones de vida
-    de sus habitantes.\r\n\r\nAnte la falta de oportunidades y la incertidumbre sobre
-    el futuro, numerosas familias buscan alternativas para abandonar el pa\xEDs.\r\n\r\nSin
-    embargo, las restricciones fronterizas y los controles establecidos han provocado
-    que algunos ciudadanos recurran a rutas clandestinas y redes de traslado no autorizadas.\r\n\r\nLas
-    autoridades advierten sobre los riesgos de estas pr\xE1cticas, mientras muchas
-    familias contin\xFAan buscando una salida a la situaci\xF3n que atraviesa el
-    pa\xEDs."
+  descripcion: "Darsenia: Crisis econ\xF3mica y pol\xEDtica\n\nDarsenia atraviesa
+    una crisis marcada por la escasez, la delincuencia y los conflictos entre pa\xEDses
+    vecinos. Ante la falta de oportunidades, muchas familias intentan abandonar el
+    pa\xEDs, algunas recurriendo a rutas clandestinas debido a las restricciones
+    fronterizas."
   tipo: 1
+  prefabMundo: {fileID: 0}

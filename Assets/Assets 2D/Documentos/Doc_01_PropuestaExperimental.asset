@@ -15,17 +15,11 @@ MonoBehaviour:
   id: doc_01
   nombre: Propuesta del proyecto experimental
   icono: {fileID: 21300000, guid: e21309f2d8a8c064e8b15effaa4aaede, type: 3}
-  descripcion: "Documento 1. Propuesta del proyecto experimental\r\nProyecto cient\xEDfico\r\nUBICACI\xD3N
-    SUGERIDA: OFICINA DE INVESTIGACI\xD3N\r\n\r\nPROYECTO DE CONEXI\xD3N ESPACIAL\r\n\r\nFase
-    experimental \u2014 Documento interno\r\n\r\nObjetivo del proyecto:\r\n\r\nEl
-    prop\xF3sito de esta investigaci\xF3n es desarrollar un sistema de transporte
-    capaz de reducir considerablemente el tiempo necesario para desplazarse entre
-    dos puntos distantes.\r\n\r\nMediante la manipulaci\xF3n controlada del espacio,
-    se pretende establecer una conexi\xF3n temporal que permita trasladar personas
-    y objetos en cuesti\xF3n de segundos, sin necesidad de recorrer f\xEDsicamente
-    la distancia que los separa.\r\n\r\nLas primeras pruebas han demostrado resultados
-    prometedores. Sin embargo, todav\xEDa es necesario perfeccionar la estabilidad
-    de la conexi\xF3n y garantizar que el proceso pueda realizarse sin alteraciones.\r\n\r\nEstado
-    actual: Fase experimental.\r\n\r\nObservaci\xF3n: No se autoriza el uso del sistema
-    fuera de las pruebas supervisadas."
+  descripcion: "Proyecto de Conexi\xF3n Espacial \u2014 Fase experimental\n\nEl proyecto
+    busca desarrollar un sistema capaz de conectar dos puntos distantes mediante
+    la manipulaci\xF3n del espacio, permitiendo transportar personas y objetos en
+    segundos. Aunque las primeras pruebas han sido prometedoras, a\xFAn se necesita
+    mejorar la estabilidad y seguridad del sistema.\n\nEstado: En fase experimental.
+    No autorizado para uso fuera de pruebas supervisadas."
   tipo: 1
+  prefabMundo: {fileID: 0}
