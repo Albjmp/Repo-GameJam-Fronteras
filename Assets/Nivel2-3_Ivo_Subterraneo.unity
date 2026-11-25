@@ -46213,7 +46213,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 933589660}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: acd326e2d5d78134297678160bd9ca4c, type: 3}
   m_Name: 
@@ -79907,11 +79907,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4855686510544648, guid: 2426adc0637995045b75714d0d4370ca, type: 3}
   m_PrefabInstance: {fileID: 1538974657}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1539624655 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8367708212819552349, guid: 4291061e24f318e40b17bd3de7171975, type: 3}
-  m_PrefabInstance: {fileID: 1738581648}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1545075695
 GameObject:
   m_ObjectHideFlags: 0
@@ -89540,8 +89535,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8367708212819552349, guid: 4291061e24f318e40b17bd3de7171975, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1738581650}
-=======
       addedObject: {fileID: 1738581653}
     - targetCorrespondingSourceObject: {fileID: 8367708212819552349, guid: 4291061e24f318e40b17bd3de7171975, type: 3}
       insertIndex: -1
@@ -89552,53 +89545,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4521537855104541238, guid: 4291061e24f318e40b17bd3de7171975, type: 3}
   m_PrefabInstance: {fileID: 1738581648}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1738581650
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1539624655}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: acd326e2d5d78134297678160bd9ca4c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PuertaConLlave
-  llaveRequerida: {fileID: 11400000, guid: a11407b73b7b1de2883abf35825b08b8, type: 2}
-  consumirLlaveAlUsar: 1
-  anguloApertura: 90
-  velocidadApertura: 3
-  textoAvisoUI: {fileID: 0}
-  iconoCandadoUI: {fileID: 1738402789}
-  fuenteAudioPuerta: {fileID: 0}
-  sonidoDesbloquearLlave: {fileID: 0}
-  sonidoAbrirPuerta: {fileID: 0}
-  onPuertaAbierta:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  inventarioJugador: {fileID: 0}
---- !u!65 &1738581654
-=======
 --- !u!65 &1738581653
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1539624655}
-=======
   m_GameObject: {fileID: 966256369}
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -89612,9 +89564,6 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.1372948, y: 3.8115494, z: 0.6856302}
-  m_Center: {x: 1.0686507, y: -0.03158149, z: -0.25165838}
-=======
   m_Size: {x: 2.8400002, y: 4.599996, z: 1.4904469}
   m_Center: {x: 1.0686511, y: -0.03158149, z: 0.14473833}
 --- !u!114 &1738581654
@@ -89727,10 +89676,6 @@ GameObject:
   - component: {fileID: 1740654541}
   - component: {fileID: 1740654540}
   - component: {fileID: 1740654544}
-  - component: {fileID: 1740654545}
-  - component: {fileID: 1740654546}
-  m_Layer: 0
-=======
   m_Layer: 2
   m_Name: Jugador
   m_TagString: Player
@@ -90143,22 +90088,6 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SistemaVidaJugador
-  golpesMaximos: 5
-  tiempoInvulnerable: 1.5
-  imagenVidaUI: {fileID: 0}
-  fuenteAudio: {fileID: 0}
-  sonidoDano: {fileID: 0}
-  spritesDeVida:
-  - {fileID: 21300000, guid: 49d7b479e526ae14b91fa4e8361441d7, type: 3}
-  - {fileID: 21300000, guid: 5acf481280da94041b278397bbb7f0e5, type: 3}
-  - {fileID: 21300000, guid: b5549d124ac4a2f4abebb0d464c47216, type: 3}
-  - {fileID: 21300000, guid: fee78ce95c633764ebfd5121b5cfefcf, type: 3}
-  - {fileID: 21300000, guid: 8b40cb19d709d164e9c7e3b56179e014, type: 3}
-  - {fileID: 21300000, guid: ea6ecbfcaf7073e4ba2683526ac4d126, type: 3}
---- !u!54 &1740654546
-Rigidbody:
-=======
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 0.4792453, g: 0.4792453, b: 0.4792453, a: 1}
@@ -90184,28 +90113,6 @@ CanvasRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1740654534}
-  serializedVersion: 5
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
-=======
   m_GameObject: {fileID: 1740986385}
   m_CullTransparentMesh: 1
 --- !u!1001 &1742247518
