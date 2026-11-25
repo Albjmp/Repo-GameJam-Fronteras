@@ -26250,7 +26250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93f4ab129d028554fbad5288d1183754, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ControladorJugador
-  protagonistaActivo: 0
+  protagonistaActivo: 1
   camaraTransform: {fileID: 892063974}
   velocidadCorrerSean: 8
   estaminaMaxima: 100
