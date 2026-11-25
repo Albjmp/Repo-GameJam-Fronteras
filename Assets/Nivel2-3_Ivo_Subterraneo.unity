@@ -24593,6 +24593,7 @@ GameObject:
   - component: {fileID: 516289306}
   - component: {fileID: 516289305}
   - component: {fileID: 516289307}
+  - component: {fileID: 516289308}
   m_Layer: 0
   m_Name: cuadro familia
   m_TagString: Untagged
@@ -24708,6 +24709,27 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!65 &516289308
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 516289304}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 23.603092, y: 24.022968, z: 0.20000005}
+  m_Center: {x: 0, y: -3.8114676, z: 2.4335111e-14}
 --- !u!1001 &516810299
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39270,7 +39292,7 @@ RectTransform:
   m_GameObject: {fileID: 788448297}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.61001, y: 0.61001, z: 0.61001}
+  m_LocalScale: {x: 4.628713, y: 4.628713, z: 4.628713}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1045862794}
@@ -68286,7 +68308,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1330331829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96920,7 +96942,7 @@ MonoBehaviour:
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 150, y: 150}
+  m_CellSize: {x: 100, y: 100}
   m_Spacing: {x: 10, y: 10}
   m_Constraint: 0
   m_ConstraintCount: 2
@@ -107135,7 +107157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.6842223}
   m_AnchorMax: {x: 0.43800002, y: 1}
-  m_AnchoredPosition: {x: 8.499924, y: -8.5}
+  m_AnchoredPosition: {x: 8.5, y: -8.5}
   m_SizeDelta: {x: -591, y: -241}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2035441128

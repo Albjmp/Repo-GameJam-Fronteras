@@ -26075,7 +26075,7 @@ MonoBehaviour:
   alturaSaltoSean: 1.2
   sensibilidadRaton: 0.2
   gravedad: -9.81
-  audioCaminar: {fileID: 0}
+  audioCaminar: {fileID: 1584623825}
 --- !u!4 &1462591894
 Transform:
   m_ObjectHideFlags: 0
