@@ -37694,9 +37694,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8367708212819552349, guid: 4291061e24f318e40b17bd3de7171975, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1402256924}
-    - targetCorrespondingSourceObject: {fileID: 8367708212819552349, guid: 4291061e24f318e40b17bd3de7171975, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1402256928}
   m_SourcePrefab: {fileID: 100100000, guid: 4291061e24f318e40b17bd3de7171975, type: 3}
 --- !u!4 &762444709 stripped
 Transform:
@@ -72232,21 +72229,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   inventarioJugador: {fileID: 0}
---- !u!114 &1402256928
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1402256919}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5946fa8c5225a9cf8b2411c21f87ed5e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TriggerCinematicaPuerta
-  controladorCinematica: {fileID: 460125676}
-  clipCinematica: {fileID: 32900000, guid: 0fd571dfacf709500bdd8f5730ea1124, type: 3}
-  escenaMenuPrincipal: MainMenu
 --- !u!1 &1405426985
 GameObject:
   m_ObjectHideFlags: 0
@@ -88879,7 +88861,7 @@ Transform:
   m_GameObject: {fileID: 1740654534}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 408.9, y: 1, z: 924.34}
+  m_LocalPosition: {x: 426.1, y: 1, z: 854.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
