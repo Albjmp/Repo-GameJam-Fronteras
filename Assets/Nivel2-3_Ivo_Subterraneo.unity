@@ -22030,8 +22030,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ControladorCinematica
   clipAlIniciar: {fileID: 0}
   escenaSiguienteAlFinal: 
-  hudJuego: {fileID: 0}
-  scriptsABloquear: []
+  hudJuego: {fileID: 1045862793}
+  scriptsABloquear:
+  - {fileID: 1740654536}
   permitirSaltarConEspacio: 1
   onCinematicaTerminada:
     m_PersistentCalls:
@@ -24834,9 +24835,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5db7f519c29703b6781828ea45b6d676, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteraccionCuadro
-  controladorCinematica: {fileID: 0}
-  clipCinematica: {fileID: 0}
-  retrasoSegundos: 3
+  controladorCinematica: {fileID: 460125676}
+  clipCinematica: {fileID: 32900000, guid: c9388f03ad299e4b2ba2f490f2bd7090, type: 3}
+  retrasoSegundos: 2
   activarSoloUnaVez: 1
   textoInteractuarUI: {fileID: 0}
   mensajeAviso: Presiona [E] para observar
