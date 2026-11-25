@@ -26103,7 +26103,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 47f4bc1fc8042824e8ada620065f8d8e, type: 3}
+  m_Resource: {fileID: 8300000, guid: 55bbe55fa44a0ae4486907f25a55bf75, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -26208,7 +26208,7 @@ MonoBehaviour:
   fuenteAudio: {fileID: 1462591896}
   inventarioJugador: {fileID: 0}
   objetoDetectorRequerido: {fileID: 0}
-  sonidoPitido: {fileID: 8300000, guid: 47f4bc1fc8042824e8ada620065f8d8e, type: 3}
+  sonidoPitido: {fileID: 8300000, guid: 55bbe55fa44a0ae4486907f25a55bf75, type: 3}
   intervaloMaximo: 1.5
   intervaloMinimo: 0.1
 --- !u!114 &1462591898
