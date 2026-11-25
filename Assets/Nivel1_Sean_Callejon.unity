@@ -1548,7 +1548,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 337.38, y: 1.69, z: 827.12}
-  m_LocalScale: {x: 2.1972837, y: 2.1972837, z: 2.1972837}
+  m_LocalScale: {x: 1.3706206, y: 1.3706206, z: 1.3706206}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1686414439}
@@ -25490,7 +25490,7 @@ MonoBehaviour:
   fuenteAudio: {fileID: 1462591896}
   inventarioJugador: {fileID: 0}
   objetoDetectorRequerido: {fileID: 0}
-  sonidoPitido: {fileID: 8300000, guid: 47f4bc1fc8042824e8ada620065f8d8e, type: 3}
+  sonidoPitido: {fileID: 8300000, guid: 2836b3292966914e9aec43e7f21a1d46, type: 3}
   intervaloMaximo: 1.5
   intervaloMinimo: 0.1
 --- !u!114 &1462591898
@@ -30726,7 +30726,7 @@ Transform:
   m_GameObject: {fileID: 1686414438}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.957, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
