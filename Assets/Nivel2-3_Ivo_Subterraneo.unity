@@ -2515,6 +2515,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4855686510544648, guid: 2426adc0637995045b75714d0d4370ca, type: 3}
   m_PrefabInstance: {fileID: 40485610}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &40485751 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8367708212819552349, guid: 4291061e24f318e40b17bd3de7171975, type: 3}
+  m_PrefabInstance: {fileID: 1977855133}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &43661014
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5878,7 +5883,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8367708212819552349, guid: 4291061e24f318e40b17bd3de7171975, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1864866053}
+    - targetCorrespondingSourceObject: {fileID: 8367708212819552349, guid: 4291061e24f318e40b17bd3de7171975, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1864866054}
   m_SourcePrefab: {fileID: 100100000, guid: 4291061e24f318e40b17bd3de7171975, type: 3}
 --- !u!4 &119964694 stripped
 Transform:
@@ -16832,7 +16843,16 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8367708212819552349, guid: 4291061e24f318e40b17bd3de7171975, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1152798689}
+    - targetCorrespondingSourceObject: {fileID: 8367708212819552349, guid: 4291061e24f318e40b17bd3de7171975, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1152798690}
+    - targetCorrespondingSourceObject: {fileID: 8367708212819552349, guid: 4291061e24f318e40b17bd3de7171975, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1152798691}
   m_SourcePrefab: {fileID: 100100000, guid: 4291061e24f318e40b17bd3de7171975, type: 3}
 --- !u!4 &348336112 stripped
 Transform:
@@ -17390,6 +17410,11 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!1 &362115598 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8367708212819552349, guid: 4291061e24f318e40b17bd3de7171975, type: 3}
+  m_PrefabInstance: {fileID: 1284301057}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &367017994
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31141,7 +31166,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 635031273}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: acd326e2d5d78134297678160bd9ca4c, type: 3}
   m_Name: 
@@ -31151,6 +31176,7 @@ MonoBehaviour:
   anguloApertura: 90
   velocidadApertura: 3
   textoAvisoUI: {fileID: 0}
+  iconoCandadoUI: {fileID: 0}
   fuenteAudioPuerta: {fileID: 0}
   sonidoDesbloquearLlave: {fileID: 0}
   sonidoAbrirPuerta: {fileID: 0}
@@ -37077,7 +37103,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8367708212819552349, guid: 4291061e24f318e40b17bd3de7171975, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1402256923}
+    - targetCorrespondingSourceObject: {fileID: 8367708212819552349, guid: 4291061e24f318e40b17bd3de7171975, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1402256924}
   m_SourcePrefab: {fileID: 100100000, guid: 4291061e24f318e40b17bd3de7171975, type: 3}
 --- !u!4 &762444709 stripped
 Transform:
@@ -38514,6 +38546,81 @@ Transform:
   - {fileID: 597162333}
   m_Father: {fileID: 1700955004}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &788448297
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 788448298}
+  - component: {fileID: 788448300}
+  - component: {fileID: 788448299}
+  m_Layer: 5
+  m_Name: Icono_Candado
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &788448298
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 788448297}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.61001, y: 0.61001, z: 0.61001}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1045862794}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -62, y: -60}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &788448299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 788448297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: f997236b9083551f88f84a12c75e4e00, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &788448300
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 788448297}
+  m_CullTransparentMesh: 1
 --- !u!1001 &789094171
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39060,7 +39167,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8367708212819552349, guid: 4291061e24f318e40b17bd3de7171975, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 810253771}
+    - targetCorrespondingSourceObject: {fileID: 8367708212819552349, guid: 4291061e24f318e40b17bd3de7171975, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 810253772}
   m_SourcePrefab: {fileID: 100100000, guid: 4291061e24f318e40b17bd3de7171975, type: 3}
 --- !u!4 &795519609 stripped
 Transform:
@@ -39860,6 +39973,57 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a45edb9d0963a3243a482f056a097546, type: 3}
+--- !u!1 &810253767 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8367708212819552349, guid: 4291061e24f318e40b17bd3de7171975, type: 3}
+  m_PrefabInstance: {fileID: 795519608}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &810253771
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 810253767}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.78, y: 4.46, z: 1.5293871}
+  m_Center: {x: 1.0686507, y: -0.0315814, z: 0.07918652}
+--- !u!114 &810253772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 810253767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acd326e2d5d78134297678160bd9ca4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PuertaConLlave
+  llaveRequerida: {fileID: 11400000, guid: bd1a5a0beabeb048881f4b776d6a3aa5, type: 2}
+  consumirLlaveAlUsar: 0
+  anguloApertura: 90
+  velocidadApertura: 3
+  textoAvisoUI: {fileID: 0}
+  iconoCandadoUI: {fileID: 788448297}
+  fuenteAudioPuerta: {fileID: 0}
+  sonidoDesbloquearLlave: {fileID: 0}
+  sonidoAbrirPuerta: {fileID: 0}
+  onPuertaAbierta:
+    m_PersistentCalls:
+      m_Calls: []
+  inventarioJugador: {fileID: 0}
 --- !u!1001 &812575358
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40772,7 +40936,7 @@ MonoBehaviour:
   fullPauseCanvas: {fileID: 535053441}
   barraLinternaUI: {fileID: 1850052023}
   barraEstaminaUI: {fileID: 1575996298}
-  musicaNivel: {fileID: 0}
+  musicaNivel: {fileID: 1396211027}
   multiplicadorVolumenPausa: 0.25
 --- !u!4 &824910355
 Transform:
@@ -43692,6 +43856,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6911889187985575617, guid: 6ed7d3f3124452b48a3cb72186cd5851, type: 3}
   m_PrefabInstance: {fileID: 895667146}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &897561831 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8367708212819552349, guid: 4291061e24f318e40b17bd3de7171975, type: 3}
+  m_PrefabInstance: {fileID: 1199930444}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &898450568
 GameObject:
   m_ObjectHideFlags: 0
@@ -46053,10 +46222,11 @@ MonoBehaviour:
   consumirLlaveAlUsar: 0
   anguloApertura: 90
   velocidadApertura: 3
-  textoAvisoUI: {fileID: 0}
-  fuenteAudioPuerta: {fileID: 0}
-  sonidoDesbloquearLlave: {fileID: 0}
-  sonidoAbrirPuerta: {fileID: 0}
+  textoAvisoUI: {fileID: 199061097}
+  iconoCandadoUI: {fileID: 788448297}
+  fuenteAudioPuerta: {fileID: 1740654539}
+  sonidoDesbloquearLlave: {fileID: 8300000, guid: 2f5e3077582209e418ee98dd03e7a30a, type: 3}
+  sonidoAbrirPuerta: {fileID: 8300000, guid: 8ef873227457f8b4db40f2b1685864fa, type: 3}
   onPuertaAbierta:
     m_PersistentCalls:
       m_Calls: []
@@ -47944,6 +48114,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4855686510544648, guid: 2426adc0637995045b75714d0d4370ca, type: 3}
   m_PrefabInstance: {fileID: 965710536}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &966256369 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8367708212819552349, guid: 4291061e24f318e40b17bd3de7171975, type: 3}
+  m_PrefabInstance: {fileID: 1738581648}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &966493990
 PrefabInstance:
@@ -52973,6 +53148,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 788448298}
   - {fileID: 1850052025}
   - {fileID: 536733203}
   - {fileID: 199061096}
@@ -58070,6 +58246,82 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4855686510544648, guid: 2426adc0637995045b75714d0d4370ca, type: 3}
   m_PrefabInstance: {fileID: 1150246785}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1152798685 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8367708212819552349, guid: 4291061e24f318e40b17bd3de7171975, type: 3}
+  m_PrefabInstance: {fileID: 348336111}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1152798689
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1152798685}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.6499999, y: 4.56, z: 1.3298025}
+  m_Center: {x: 1.0686507, y: -0.03158164, z: 0.037492316}
+--- !u!114 &1152798690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1152798685}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acd326e2d5d78134297678160bd9ca4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PuertaConLlave
+  llaveRequerida: {fileID: 0}
+  consumirLlaveAlUsar: 0
+  anguloApertura: 90
+  velocidadApertura: 3
+  textoAvisoUI: {fileID: 0}
+  iconoCandadoUI: {fileID: 0}
+  fuenteAudioPuerta: {fileID: 0}
+  sonidoDesbloquearLlave: {fileID: 0}
+  sonidoAbrirPuerta: {fileID: 0}
+  onPuertaAbierta:
+    m_PersistentCalls:
+      m_Calls: []
+  inventarioJugador: {fileID: 0}
+--- !u!114 &1152798691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1152798685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acd326e2d5d78134297678160bd9ca4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PuertaConLlave
+  llaveRequerida: {fileID: 11400000, guid: 567549efdefe8d7ba8dc29d26facf993, type: 2}
+  consumirLlaveAlUsar: 0
+  anguloApertura: 90
+  velocidadApertura: 3
+  textoAvisoUI: {fileID: 0}
+  iconoCandadoUI: {fileID: 788448297}
+  fuenteAudioPuerta: {fileID: 0}
+  sonidoDesbloquearLlave: {fileID: 0}
+  sonidoAbrirPuerta: {fileID: 0}
+  onPuertaAbierta:
+    m_PersistentCalls:
+      m_Calls: []
+  inventarioJugador: {fileID: 0}
 --- !u!1 &1153604305
 GameObject:
   m_ObjectHideFlags: 0
@@ -60229,13 +60481,65 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8367708212819552349, guid: 4291061e24f318e40b17bd3de7171975, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1199930449}
+    - targetCorrespondingSourceObject: {fileID: 8367708212819552349, guid: 4291061e24f318e40b17bd3de7171975, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1199930450}
   m_SourcePrefab: {fileID: 100100000, guid: 4291061e24f318e40b17bd3de7171975, type: 3}
 --- !u!4 &1199930445 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4521537855104541238, guid: 4291061e24f318e40b17bd3de7171975, type: 3}
   m_PrefabInstance: {fileID: 1199930444}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &1199930449
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 897561831}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.0400002, y: 4.55, z: 1.58261}
+  m_Center: {x: 1.0686508, y: -0.0315814, z: -0.06725718}
+--- !u!114 &1199930450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 897561831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acd326e2d5d78134297678160bd9ca4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PuertaConLlave
+  llaveRequerida: {fileID: 11400000, guid: 3aa0eb494b826f12f9c5e675622dcaa5, type: 2}
+  consumirLlaveAlUsar: 0
+  anguloApertura: 90
+  velocidadApertura: 3
+  textoAvisoUI: {fileID: 0}
+  iconoCandadoUI: {fileID: 788448297}
+  fuenteAudioPuerta: {fileID: 0}
+  sonidoDesbloquearLlave: {fileID: 0}
+  sonidoAbrirPuerta: {fileID: 0}
+  onPuertaAbierta:
+    m_PersistentCalls:
+      m_Calls: []
+  inventarioJugador: {fileID: 0}
 --- !u!4 &1201144744 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5670652352806131157, guid: 5a942a3ad9865a145ba87519aa7a5d6c, type: 3}
@@ -65969,13 +66273,65 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8367708212819552349, guid: 4291061e24f318e40b17bd3de7171975, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1284301062}
+    - targetCorrespondingSourceObject: {fileID: 8367708212819552349, guid: 4291061e24f318e40b17bd3de7171975, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1284301063}
   m_SourcePrefab: {fileID: 100100000, guid: 4291061e24f318e40b17bd3de7171975, type: 3}
 --- !u!4 &1284301058 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4521537855104541238, guid: 4291061e24f318e40b17bd3de7171975, type: 3}
   m_PrefabInstance: {fileID: 1284301057}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &1284301062
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 362115598}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.6, y: 4.56, z: 1.3286728}
+  m_Center: {x: 1.0686812, y: -0.03158164, z: 0.032155763}
+--- !u!114 &1284301063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 362115598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acd326e2d5d78134297678160bd9ca4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PuertaConLlave
+  llaveRequerida: {fileID: 11400000, guid: a11407b73b7b1de2883abf35825b08b8, type: 2}
+  consumirLlaveAlUsar: 0
+  anguloApertura: 90
+  velocidadApertura: 3
+  textoAvisoUI: {fileID: 0}
+  iconoCandadoUI: {fileID: 788448297}
+  fuenteAudioPuerta: {fileID: 0}
+  sonidoDesbloquearLlave: {fileID: 0}
+  sonidoAbrirPuerta: {fileID: 0}
+  onPuertaAbierta:
+    m_PersistentCalls:
+      m_Calls: []
+  inventarioJugador: {fileID: 0}
 --- !u!1 &1286261224
 GameObject:
   m_ObjectHideFlags: 0
@@ -66665,6 +67021,7 @@ MonoBehaviour:
   anguloApertura: 90
   velocidadApertura: 3
   textoAvisoUI: {fileID: 0}
+  iconoCandadoUI: {fileID: 0}
   fuenteAudioPuerta: {fileID: 0}
   sonidoDesbloquearLlave: {fileID: 0}
   sonidoAbrirPuerta: {fileID: 0}
@@ -72160,6 +72517,57 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2157084971063829736, guid: 2c4ea5c4947579e4eb952fe06d28fa91, type: 3}
   m_PrefabInstance: {fileID: 1669473110}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1402256919 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8367708212819552349, guid: 4291061e24f318e40b17bd3de7171975, type: 3}
+  m_PrefabInstance: {fileID: 762444708}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1402256923
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1402256919}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.73, y: 4.76, z: 1.5239552}
+  m_Center: {x: 1.068651, y: -0.0315814, z: 0.0662724}
+--- !u!114 &1402256924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1402256919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acd326e2d5d78134297678160bd9ca4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PuertaConLlave
+  llaveRequerida: {fileID: 11400000, guid: f027cb898ab356dbcbb7c7bf2406e4fb, type: 2}
+  consumirLlaveAlUsar: 0
+  anguloApertura: 90
+  velocidadApertura: 3
+  textoAvisoUI: {fileID: 0}
+  iconoCandadoUI: {fileID: 788448297}
+  fuenteAudioPuerta: {fileID: 0}
+  sonidoDesbloquearLlave: {fileID: 0}
+  sonidoAbrirPuerta: {fileID: 0}
+  onPuertaAbierta:
+    m_PersistentCalls:
+      m_Calls: []
+  inventarioJugador: {fileID: 0}
 --- !u!1 &1405426985
 GameObject:
   m_ObjectHideFlags: 0
@@ -81259,6 +81667,7 @@ MonoBehaviour:
   anguloApertura: 90
   velocidadApertura: 3
   textoAvisoUI: {fileID: 0}
+  iconoCandadoUI: {fileID: 0}
   fuenteAudioPuerta: {fileID: 0}
   sonidoDesbloquearLlave: {fileID: 0}
   sonidoAbrirPuerta: {fileID: 0}
@@ -89123,13 +89532,65 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8367708212819552349, guid: 4291061e24f318e40b17bd3de7171975, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1738581653}
+    - targetCorrespondingSourceObject: {fileID: 8367708212819552349, guid: 4291061e24f318e40b17bd3de7171975, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1738581654}
   m_SourcePrefab: {fileID: 100100000, guid: 4291061e24f318e40b17bd3de7171975, type: 3}
 --- !u!4 &1738581649 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4521537855104541238, guid: 4291061e24f318e40b17bd3de7171975, type: 3}
   m_PrefabInstance: {fileID: 1738581648}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &1738581653
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 966256369}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.8400002, y: 4.599996, z: 1.4904469}
+  m_Center: {x: 1.0686511, y: -0.03158149, z: 0.14473833}
+--- !u!114 &1738581654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 966256369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acd326e2d5d78134297678160bd9ca4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PuertaConLlave
+  llaveRequerida: {fileID: 11400000, guid: a11407b73b7b1de2883abf35825b08b8, type: 2}
+  consumirLlaveAlUsar: 0
+  anguloApertura: 90
+  velocidadApertura: 3
+  textoAvisoUI: {fileID: 0}
+  iconoCandadoUI: {fileID: 788448297}
+  fuenteAudioPuerta: {fileID: 0}
+  sonidoDesbloquearLlave: {fileID: 0}
+  sonidoAbrirPuerta: {fileID: 0}
+  onPuertaAbierta:
+    m_PersistentCalls:
+      m_Calls: []
+  inventarioJugador: {fileID: 0}
 --- !u!1001 &1738834285
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -89215,9 +89676,9 @@ GameObject:
   - component: {fileID: 1740654541}
   - component: {fileID: 1740654540}
   - component: {fileID: 1740654544}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Jugador
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -96120,7 +96581,8 @@ GameObject:
   - component: {fileID: 1859116515}
   - component: {fileID: 1859116514}
   - component: {fileID: 1859116517}
-  m_Layer: 0
+  - component: {fileID: 1859116518}
+  m_Layer: 2
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -96245,6 +96707,24 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!114 &1859116518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1859116513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df74e8a1d6f056a5b9d62e431c96cc4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Selected
+  distancia: 3.5
+  mask:
+    serializedVersion: 2
+    m_Bits: 129
+  puntero: {fileID: 0}
+  TextDetect: {fileID: 199061095}
 --- !u!1 &1860640580
 GameObject:
   m_ObjectHideFlags: 0
@@ -96679,6 +97159,57 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4514741687205942, guid: ecdfe8b9901cb624b8ff940a4f7cf882, type: 3}
   m_PrefabInstance: {fileID: 1863256984}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1864866049 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8367708212819552349, guid: 4291061e24f318e40b17bd3de7171975, type: 3}
+  m_PrefabInstance: {fileID: 119964693}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1864866053
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1864866049}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.8000002, y: 4.49, z: 1.3346853}
+  m_Center: {x: 1.068651, y: -0.0315814, z: 0.12070662}
+--- !u!114 &1864866054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1864866049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acd326e2d5d78134297678160bd9ca4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PuertaConLlave
+  llaveRequerida: {fileID: 11400000, guid: c8d60f9af2ef53d408812e78c7d518d1, type: 2}
+  consumirLlaveAlUsar: 0
+  anguloApertura: 90
+  velocidadApertura: 3
+  textoAvisoUI: {fileID: 0}
+  iconoCandadoUI: {fileID: 788448297}
+  fuenteAudioPuerta: {fileID: 0}
+  sonidoDesbloquearLlave: {fileID: 0}
+  sonidoAbrirPuerta: {fileID: 0}
+  onPuertaAbierta:
+    m_PersistentCalls:
+      m_Calls: []
+  inventarioJugador: {fileID: 0}
 --- !u!1001 &1867355422
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -101513,6 +102044,11 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!1 &1942608360 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8367708212819552349, guid: 4291061e24f318e40b17bd3de7171975, type: 3}
+  m_PrefabInstance: {fileID: 2112215011}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1944409842 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2157084971063829736, guid: 2c4ea5c4947579e4eb952fe06d28fa91, type: 3}
@@ -103392,13 +103928,65 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8367708212819552349, guid: 4291061e24f318e40b17bd3de7171975, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1977855138}
+    - targetCorrespondingSourceObject: {fileID: 8367708212819552349, guid: 4291061e24f318e40b17bd3de7171975, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1977855139}
   m_SourcePrefab: {fileID: 100100000, guid: 4291061e24f318e40b17bd3de7171975, type: 3}
 --- !u!4 &1977855134 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4521537855104541238, guid: 4291061e24f318e40b17bd3de7171975, type: 3}
   m_PrefabInstance: {fileID: 1977855133}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &1977855138
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 40485751}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.6799998, y: 4.46, z: 1.5111678}
+  m_Center: {x: 1.0686508, y: -0.0315814, z: -0.02737264}
+--- !u!114 &1977855139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 40485751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acd326e2d5d78134297678160bd9ca4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PuertaConLlave
+  llaveRequerida: {fileID: 11400000, guid: a2ecc29af134b94a6a24a9d6e663fcfb, type: 2}
+  consumirLlaveAlUsar: 0
+  anguloApertura: 90
+  velocidadApertura: 3
+  textoAvisoUI: {fileID: 0}
+  iconoCandadoUI: {fileID: 788448297}
+  fuenteAudioPuerta: {fileID: 0}
+  sonidoDesbloquearLlave: {fileID: 0}
+  sonidoAbrirPuerta: {fileID: 0}
+  onPuertaAbierta:
+    m_PersistentCalls:
+      m_Calls: []
+  inventarioJugador: {fileID: 0}
 --- !u!1 &1978037695
 GameObject:
   m_ObjectHideFlags: 0
@@ -105376,6 +105964,7 @@ MonoBehaviour:
   anguloApertura: 90
   velocidadApertura: 3
   textoAvisoUI: {fileID: 0}
+  iconoCandadoUI: {fileID: 0}
   fuenteAudioPuerta: {fileID: 0}
   sonidoDesbloquearLlave: {fileID: 0}
   sonidoAbrirPuerta: {fileID: 0}
@@ -109247,6 +109836,7 @@ MonoBehaviour:
   anguloApertura: 90
   velocidadApertura: 3
   textoAvisoUI: {fileID: 0}
+  iconoCandadoUI: {fileID: 0}
   fuenteAudioPuerta: {fileID: 0}
   sonidoDesbloquearLlave: {fileID: 0}
   sonidoAbrirPuerta: {fileID: 0}
@@ -109474,6 +110064,7 @@ MonoBehaviour:
   anguloApertura: 90
   velocidadApertura: 3
   textoAvisoUI: {fileID: 0}
+  iconoCandadoUI: {fileID: 0}
   fuenteAudioPuerta: {fileID: 0}
   sonidoDesbloquearLlave: {fileID: 0}
   sonidoAbrirPuerta: {fileID: 0}
@@ -109679,13 +110270,65 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8367708212819552349, guid: 4291061e24f318e40b17bd3de7171975, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2112215016}
+    - targetCorrespondingSourceObject: {fileID: 8367708212819552349, guid: 4291061e24f318e40b17bd3de7171975, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2112215017}
   m_SourcePrefab: {fileID: 100100000, guid: 4291061e24f318e40b17bd3de7171975, type: 3}
 --- !u!4 &2112215012 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4521537855104541238, guid: 4291061e24f318e40b17bd3de7171975, type: 3}
   m_PrefabInstance: {fileID: 2112215011}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &2112215016
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1942608360}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.7200003, y: 4.45, z: 1.4801625}
+  m_Center: {x: 1.068651, y: -0.0315814, z: 0.063558914}
+--- !u!114 &2112215017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1942608360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acd326e2d5d78134297678160bd9ca4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PuertaConLlave
+  llaveRequerida: {fileID: 11400000, guid: 2285c325c37ec61f6b04414e598bbb3a, type: 2}
+  consumirLlaveAlUsar: 0
+  anguloApertura: 90
+  velocidadApertura: 3
+  textoAvisoUI: {fileID: 0}
+  iconoCandadoUI: {fileID: 788448297}
+  fuenteAudioPuerta: {fileID: 0}
+  sonidoDesbloquearLlave: {fileID: 0}
+  sonidoAbrirPuerta: {fileID: 0}
+  onPuertaAbierta:
+    m_PersistentCalls:
+      m_Calls: []
+  inventarioJugador: {fileID: 0}
 --- !u!1001 &2115199390
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -109986,6 +110629,7 @@ MonoBehaviour:
   anguloApertura: 90
   velocidadApertura: 3
   textoAvisoUI: {fileID: 0}
+  iconoCandadoUI: {fileID: 0}
   fuenteAudioPuerta: {fileID: 0}
   sonidoDesbloquearLlave: {fileID: 0}
   sonidoAbrirPuerta: {fileID: 0}
@@ -111938,6 +112582,7 @@ MonoBehaviour:
   anguloApertura: 90
   velocidadApertura: 3
   textoAvisoUI: {fileID: 0}
+  iconoCandadoUI: {fileID: 0}
   fuenteAudioPuerta: {fileID: 0}
   sonidoDesbloquearLlave: {fileID: 0}
   sonidoAbrirPuerta: {fileID: 0}

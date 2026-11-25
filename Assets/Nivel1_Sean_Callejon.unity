@@ -8021,6 +8021,8 @@ MonoBehaviour:
   fullPauseCanvas: {fileID: 690000028}
   barraLinternaUI: {fileID: 1678741229}
   barraEstaminaUI: {fileID: 1949009571}
+  musicaNivel: {fileID: 1584623825}
+  multiplicadorVolumenPausa: 0.25
 --- !u!1 &430193604
 GameObject:
   m_ObjectHideFlags: 0
@@ -16223,6 +16225,8 @@ MonoBehaviour:
   fullPauseCanvas: {fileID: 690000028}
   barraLinternaUI: {fileID: 1678741229}
   barraEstaminaUI: {fileID: 1949009571}
+  musicaNivel: {fileID: 1584623825}
+  multiplicadorVolumenPausa: 0.25
 --- !u!114 &879237271
 MonoBehaviour:
   m_ObjectHideFlags: 0
