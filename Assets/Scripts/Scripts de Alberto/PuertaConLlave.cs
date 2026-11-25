@@ -15,6 +15,7 @@ public class PuertaConLlave : MonoBehaviour
 
     [Header("Interfaz de usuario")]
     public TextMeshProUGUI textoAvisoUI;
+    public GameObject iconoCandadoUI; // <-- NUEVA VARIABLE PÚBLICA
 
     [Header("Audio de la puerta")]
     public AudioSource fuenteAudioPuerta;
@@ -39,6 +40,8 @@ public class PuertaConLlave : MonoBehaviour
         {
             inventarioJugador = ObtenerInventario();
         }
+
+        MostrarCandado(false); // <-- OCULTA EL CANDADO AL INICIAR
     }
 
     public Inventario ObtenerInventario()
@@ -98,6 +101,7 @@ public class PuertaConLlave : MonoBehaviour
         {
             estaAbierta = true;
             ActualizarTexto("Presiona [E] para cerrar");
+            MostrarCandado(false); // <-- OCULTA EL CANDADO AL DESBLOQUEAR
 
             if (fuenteAudioPuerta != null)
             {
@@ -115,6 +119,7 @@ public class PuertaConLlave : MonoBehaviour
         else
         {
             ActualizarTexto("Cerrada. Necesitas: " + llaveRequerida.nombre);
+            MostrarCandado(true); // <-- MUESTRA EL CANDADO SI NO TIENES LA LLAVE
         }
     }
 
@@ -131,6 +136,15 @@ public class PuertaConLlave : MonoBehaviour
                     inventarioJugador = ObtenerInventario();
                 }
             }
+
+            // <-- COMPRUEBA SI FALTA LA LLAVE AL ACERCARSE
+            bool sinLlave = !estaAbierta
+                && llaveRequerida != null
+                && inventarioJugador != null
+                && !inventarioJugador.TieneObjeto(llaveRequerida);
+
+            MostrarCandado(sinLlave);
+
             if (textoAvisoUI != null)
             {
                 textoAvisoUI.gameObject.SetActive(true);
@@ -144,6 +158,8 @@ public class PuertaConLlave : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             jugadorCerca = false;
+            MostrarCandado(false); // <-- OCULTA EL CANDADO AL ALEJARSE
+
             if (textoAvisoUI != null)
             {
                 textoAvisoUI.gameObject.SetActive(false);
@@ -156,6 +172,15 @@ public class PuertaConLlave : MonoBehaviour
         if (textoAvisoUI != null)
         {
             textoAvisoUI.text = mensaje;
+        }
+    }
+
+    // <-- NUEVO MÉTODO PARA ACTIVAR/DESACTIVAR LA IMAGEN
+    private void MostrarCandado(bool estado)
+    {
+        if (iconoCandadoUI != null)
+        {
+            iconoCandadoUI.SetActive(estado);
         }
     }
 }
