@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Events;
 using TMPro;
 
 public class PuertaConLlave : MonoBehaviour
@@ -20,7 +21,9 @@ public class PuertaConLlave : MonoBehaviour
     public AudioClip sonidoDesbloquearLlave;
     public AudioClip sonidoAbrirPuerta;
 
-    // Desacoplado de los inspectores: se resuelve automáticamente (Singleton / Trigger / Búsqueda)
+    [Header("Eventos al Abrir")]
+    public UnityEvent onPuertaAbierta;
+
     [HideInInspector] public Inventario inventarioJugador;
     private bool jugadorCerca = false;
     private bool estaAbierta = false;
@@ -60,42 +63,32 @@ public class PuertaConLlave : MonoBehaviour
     private bool InteractuoPresionado()
     {
         bool presionado = false;
-        #if ENABLE_INPUT_SYSTEM
+#if ENABLE_INPUT_SYSTEM
         if (Keyboard.current != null && Keyboard.current.eKey.wasPressedThisFrame) presionado = true;
-        #endif
-        #if ENABLE_LEGACY_INPUT_MANAGER
+#endif
+#if ENABLE_LEGACY_INPUT_MANAGER
         if (Input.GetKeyDown(KeyCode.E)) presionado = true;
-        #endif
+#endif
         return presionado;
     }
 
     private void IntentarAbrir()
     {
-        if (inventarioJugador != null && inventarioJugador.TieneObjeto(llaveRequerida))
+        if (estaAbierta)
         {
             estaAbierta = false;
-            ActualizarTexto("Presiona [F] para abrir");
-            
-            if (fuenteAudioPuerta != null)
-            {
-                if (sonidoDesbloquearLlave != null) fuenteAudioPuerta.PlayOneShot(sonidoDesbloquearLlave);
-                if (sonidoAbrirPuerta != null) fuenteAudioPuerta.PlayOneShot(sonidoAbrirPuerta);
-            }
-
-            if (consumirLlaveAlUsar)
-            {
-                inventarioJugador.EliminarObjeto(llaveRequerida);
-            }
+            ActualizarTexto("Presiona [E] para abrir");
+            return;
         }
 
         Inventario inv = ObtenerInventario();
-        if (inv == null) 
+        if (inv == null)
         {
             Debug.LogError("ERROR: La puerta no encontró el script Inventario en la escena");
-            return; 
+            return;
         }
-        
-        if (llaveRequerida == null) 
+
+        if (llaveRequerida == null)
         {
             Debug.LogError("ERROR: No asignaste ninguna llave en el Inspector de la puerta");
             return;
@@ -111,12 +104,15 @@ public class PuertaConLlave : MonoBehaviour
                 if (sonidoDesbloquearLlave != null) fuenteAudioPuerta.PlayOneShot(sonidoDesbloquearLlave);
                 if (sonidoAbrirPuerta != null) fuenteAudioPuerta.PlayOneShot(sonidoAbrirPuerta);
             }
-            
+
+            onPuertaAbierta?.Invoke();
+
             if (consumirLlaveAlUsar)
             {
                 inv.EliminarObjeto(llaveRequerida);
             }
-        } else
+        }
+        else
         {
             ActualizarTexto("Cerrada. Necesitas: " + llaveRequerida.nombre);
         }
@@ -138,7 +134,7 @@ public class PuertaConLlave : MonoBehaviour
             if (textoAvisoUI != null)
             {
                 textoAvisoUI.gameObject.SetActive(true);
-                ActualizarTexto(estaAbierta ? "Presiona [E] para cerrar" : "Presiona [E] para abrir"); 
+                ActualizarTexto(estaAbierta ? "Presiona [E] para cerrar" : "Presiona [E] para abrir");
             }
         }
     }

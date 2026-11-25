@@ -27697,6 +27697,9 @@ MonoBehaviour:
   fuenteAudioPuerta: {fileID: 0}
   sonidoDesbloquearLlave: {fileID: 0}
   sonidoAbrirPuerta: {fileID: 0}
+  onPuertaAbierta:
+    m_PersistentCalls:
+      m_Calls: []
   inventarioJugador: {fileID: 0}
 --- !u!4 &635649726 stripped
 Transform:
@@ -41506,6 +41509,9 @@ MonoBehaviour:
   fuenteAudioPuerta: {fileID: 0}
   sonidoDesbloquearLlave: {fileID: 0}
   sonidoAbrirPuerta: {fileID: 0}
+  onPuertaAbierta:
+    m_PersistentCalls:
+      m_Calls: []
   inventarioJugador: {fileID: 0}
 --- !u!1001 &933843348
 PrefabInstance:
@@ -41882,6 +41888,112 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!1 &936335865
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 936335869}
+  - component: {fileID: 936335868}
+  - component: {fileID: 936335867}
+  - component: {fileID: 936335866}
+  - component: {fileID: 936335870}
+  m_Layer: 0
+  m_Name: Anomalia 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &936335866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 936335865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 223106ad1eae62b49900074414c8e2c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PerseguidorConstante
+--- !u!195 &936335867
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 936335865}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &936335868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 936335865}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a065fd7b4d84f34bba235e63c3b0f6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemigoVigilante
+  rangoDeVision: 10
+  capaObstaculos:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!4 &936335869
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 936335865}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 437.28, y: 1.22682, z: 907.39}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &936335870
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 936335865}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &939333669 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7176362994317539961, guid: a45edb9d0963a3243a482f056a097546, type: 3}
@@ -59491,6 +59603,9 @@ MonoBehaviour:
   fuenteAudioPuerta: {fileID: 0}
   sonidoDesbloquearLlave: {fileID: 0}
   sonidoAbrirPuerta: {fileID: 0}
+  onPuertaAbierta:
+    m_PersistentCalls:
+      m_Calls: []
   inventarioJugador: {fileID: 0}
 --- !u!4 &1298965139 stripped
 Transform:
@@ -72437,6 +72552,9 @@ MonoBehaviour:
   fuenteAudioPuerta: {fileID: 0}
   sonidoDesbloquearLlave: {fileID: 0}
   sonidoAbrirPuerta: {fileID: 0}
+  onPuertaAbierta:
+    m_PersistentCalls:
+      m_Calls: []
   inventarioJugador: {fileID: 0}
 --- !u!1001 &1589033186
 PrefabInstance:
@@ -86637,6 +86755,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1879323120}
   - component: {fileID: 1879323119}
+  - component: {fileID: 1879323121}
+  - component: {fileID: 1879323122}
   m_Layer: 0
   m_Name: Anomalia
   m_TagString: Untagged
@@ -86669,12 +86789,55 @@ Transform:
   m_GameObject: {fileID: 1879323118}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 423.85397, y: 1.22682, z: 832.00684}
+  m_LocalPosition: {x: 431.4, y: 1.22682, z: 834.24}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!195 &1879323121
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1879323118}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!135 &1879323122
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1879323118}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1879489685
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -94053,6 +94216,9 @@ MonoBehaviour:
   fuenteAudioPuerta: {fileID: 0}
   sonidoDesbloquearLlave: {fileID: 0}
   sonidoAbrirPuerta: {fileID: 0}
+  onPuertaAbierta:
+    m_PersistentCalls:
+      m_Calls: []
   inventarioJugador: {fileID: 0}
 --- !u!1 &2007803637
 GameObject:
@@ -97533,6 +97699,9 @@ MonoBehaviour:
   fuenteAudioPuerta: {fileID: 0}
   sonidoDesbloquearLlave: {fileID: 0}
   sonidoAbrirPuerta: {fileID: 0}
+  onPuertaAbierta:
+    m_PersistentCalls:
+      m_Calls: []
   inventarioJugador: {fileID: 0}
 --- !u!4 &2099871745 stripped
 Transform:
@@ -97757,6 +97926,21 @@ MonoBehaviour:
   fuenteAudioPuerta: {fileID: 0}
   sonidoDesbloquearLlave: {fileID: 0}
   sonidoAbrirPuerta: {fileID: 0}
+  onPuertaAbierta:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 936335865}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   inventarioJugador: {fileID: 0}
 --- !u!1 &2111513511
 GameObject:
@@ -98254,6 +98438,9 @@ MonoBehaviour:
   fuenteAudioPuerta: {fileID: 0}
   sonidoDesbloquearLlave: {fileID: 0}
   sonidoAbrirPuerta: {fileID: 0}
+  onPuertaAbierta:
+    m_PersistentCalls:
+      m_Calls: []
   inventarioJugador: {fileID: 0}
 --- !u!1 &2120393989
 GameObject:
@@ -99917,6 +100104,9 @@ MonoBehaviour:
   fuenteAudioPuerta: {fileID: 0}
   sonidoDesbloquearLlave: {fileID: 0}
   sonidoAbrirPuerta: {fileID: 0}
+  onPuertaAbierta:
+    m_PersistentCalls:
+      m_Calls: []
   inventarioJugador: {fileID: 0}
 --- !u!1001 &7129812350615781206
 PrefabInstance:
@@ -100050,6 +100240,7 @@ SceneRoots:
   - {fileID: 2134111617}
   - {fileID: 747838214}
   - {fileID: 1879323120}
+  - {fileID: 936335869}
   - {fileID: 118723750}
   - {fileID: 763658664}
   - {fileID: 265733}
