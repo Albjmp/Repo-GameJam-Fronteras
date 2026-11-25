@@ -10,7 +10,8 @@ public class Inventario : MonoBehaviour
     [Header("Configuración UI - Panel")]
     public GameObject panelInventario; 
     public Transform contenedorSlots;   
-    public GameObject prefabSlot;      
+    public GameObject prefabSlot;
+    public TextMeshProUGUI textoDescripcionDocumento;
 
     [Header("Configuración UI - Pestañas")]
     public Button botonPestanaObjetos;
@@ -125,6 +126,18 @@ public class Inventario : MonoBehaviour
 
                 Transform nombre = nuevoSlot.transform.Find("Nombre");
                 if (nombre != null) nombre.GetComponent<TextMeshProUGUI>().text = item.nombre;
+
+                Button botonSlot = nuevoSlot.GetComponent<Button>();
+                if(botonSlot != null && pestanaActual == TipoItem.Documento)
+                {
+                    botonSlot.onClick.AddListener(() =>
+                    {
+                        if (textoDescripcionDocumento != null)
+                        {
+                            textoDescripcionDocumento.text = item.descripcion;
+                        }
+                    });
+                }
             }
         }
     }
