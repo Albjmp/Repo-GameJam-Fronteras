@@ -20,8 +20,15 @@ public class Inventario : MonoBehaviour
     public GameObject lineaObjetos;
     public GameObject lineaDocumentos;
 
+    [Header("Sistemas Externos")]
+    public GestorDocumentos gestorDocumentos;
+
+    [Header("Configuración para Soltar Ítems")]
+    public KeyCode teclaSoltar = KeyCode.Q; 
+
     private List<ItemData> items = new List<ItemData>();
     private TipoItem pestanaActual = TipoItem.Objeto; 
+    private ItemData itemSeleccionado; 
 
     private void Awake()
     {
@@ -42,34 +49,45 @@ public class Inventario : MonoBehaviour
 
     private void Update()
     {
-        // Abrir/Cerrar inventario con la tecla I
-        if (Input.GetKeyDown(KeyCode.I) && panelInventario != null)
+        // SOLO abrir/cerrar con la tecla I
+        if (Input.GetKeyDown(KeyCode.I))
         {
-            bool abrir = !panelInventario.activeSelf;
-            panelInventario.SetActive(abrir);
-            
-            if (abrir) 
-            {
-                CambiarPestana(TipoItem.Objeto); 
-                
-                // Liberar ratón y pausar
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
-                Time.timeScale = 0f; 
-            }
-            else
-            {
-                // Bloquear ratón y reanudar
-                Cursor.lockState = CursorLockMode.Locked;
-                Cursor.visible = false;
-                Time.timeScale = 1f; 
-            }
+            AlternarInventario();
+        }
+
+        // Soltar ítem si el inventario está abierto y presionas la tecla
+        if (panelInventario != null && panelInventario.activeSelf && Input.GetKeyDown(teclaSoltar))
+        {
+            SoltarItemSeleccionado();
+        }
+    }
+
+    public void AlternarInventario()
+    {
+        if (panelInventario == null) return;
+
+        bool abrir = !panelInventario.activeSelf;
+        panelInventario.SetActive(abrir);
+        
+        if (abrir) 
+        {
+            CambiarPestana(TipoItem.Objeto); 
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            Time.timeScale = 0f; 
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+            Time.timeScale = 1f; 
         }
     }
 
     public void CambiarPestana(TipoItem nuevaPestana)
     {
         pestanaActual = nuevaPestana;
+        itemSeleccionado = null;
         
         if (lineaObjetos != null && lineaDocumentos != null)
         {
@@ -84,9 +102,13 @@ public class Inventario : MonoBehaviour
     {
         items.Add(item);
         ActualizarUI();
+
+        if (GestorAnomalia.Instance != null)
+            GestorAnomalia.Instance.VerificarDocumento(item); 
+
         return true;
     }
-
+    
     public bool TieneObjeto(ItemData item) => items.Contains(item);
 
     public void EliminarObjeto(ItemData item)
@@ -98,12 +120,29 @@ public class Inventario : MonoBehaviour
         }
     }
 
+    public void SeleccionarItem(ItemData item)
+    {
+        itemSeleccionado = item;
+    }
+
+    public void SoltarItemSeleccionado()
+    {
+        if (itemSeleccionado == null) return;
+
+        if (itemSeleccionado.prefabMundo != null)
+        {
+            Vector3 posSoltar = Camera.main.transform.position + Camera.main.transform.forward * 1.5f;
+            Instantiate(itemSeleccionado.prefabMundo, posSoltar, Quaternion.identity);
+        }
+
+        EliminarObjeto(itemSeleccionado);
+        itemSeleccionado = null; 
+    }
+
     private void ActualizarUI()
     {
-        // Limpiar slots viejos
         foreach (Transform hijo in contenedorSlots) Destroy(hijo.gameObject);
 
-        // Crear slots nuevos para la pestaña actual
         foreach (ItemData item in items)
         {
             if (item.tipo == pestanaActual) 
@@ -115,6 +154,14 @@ public class Inventario : MonoBehaviour
 
                 Transform nombre = nuevoSlot.transform.Find("Nombre");
                 if (nombre != null) nombre.GetComponent<TextMeshProUGUI>().text = item.nombre;
+
+                SlotUI scriptSlot = nuevoSlot.GetComponent<SlotUI>();
+                if (scriptSlot != null)
+                {
+                    scriptSlot.itemData = item;
+                    scriptSlot.gestorDoc = gestorDocumentos;
+                    scriptSlot.inventario = this; 
+                }
             }
         }
     }

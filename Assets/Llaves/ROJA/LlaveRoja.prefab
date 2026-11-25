@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 5115501368400921606}
   - component: {fileID: 2960455989436087635}
   - component: {fileID: 3358720012674845743}
+  - component: {fileID: -1507387860549920468}
   m_Layer: 0
-  m_Name: Llave
+  m_Name: LlaveRoja
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -67,7 +68,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: dbade35e9a8052e84a031bf7497c6291, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -112,3 +113,40 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-1507387860549920468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4973445761417608859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f12cbc23805ec7ad1b4a8cb47e02fe95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObjetoInteractivo
+  tipo: 0
+  itemData: {fileID: 11400000, guid: f027cb898ab356dbcbb7c7bf2406e4fb, type: 2}
+  destruirAlRecoger: 1
+  estaAbierta: 0
+  contenidoInterior: {fileID: 0}
+  textoAbrirGaveta: E - Abrir gaveta
+  textoCerrarGaveta: E - Cerrar gaveta
+  gestorPuzzle: {fileID: 0}
+  idInterruptor: 1
+  unSoloUso: 0
+  onInteractuar:
+    m_PersistentCalls:
+      m_Calls: []
+  onAbrirGaveta:
+    m_PersistentCalls:
+      m_Calls: []
+  onCerrarGaveta:
+    m_PersistentCalls:
+      m_Calls: []
+  onCambioEstadoGaveta:
+    m_PersistentCalls:
+      m_Calls: []
+  onActivarInterruptor:
+    m_PersistentCalls:
+      m_Calls: []

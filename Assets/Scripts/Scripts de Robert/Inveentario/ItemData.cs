@@ -1,11 +1,6 @@
 using UnityEngine;
 
-// Creamos un enum para clasificar los ítems
-public enum TipoItem
-{
-    Objeto,
-    Documento
-}
+public enum TipoItem { Objeto, Documento }
 
 [CreateAssetMenu(fileName = "NuevoItem", menuName = "Inventario/ItemData")]
 public class ItemData : ScriptableObject
@@ -16,5 +11,8 @@ public class ItemData : ScriptableObject
     [TextArea] public string descripcion;
     
     [Header("Clasificación")]
-    public TipoItem tipo = TipoItem.Objeto; // Por defecto será Objeto
+    public TipoItem tipo = TipoItem.Objeto; 
+
+    [Header("Para soltar en el mundo 3D")]
+    public GameObject prefabMundo; // Aquí arrastrarás el Prefab de la llave 3D
 }
