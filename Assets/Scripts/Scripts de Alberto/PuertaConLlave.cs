@@ -15,6 +15,11 @@ public class PuertaConLlave : MonoBehaviour
     [Header("Interfaz de usuario")]
     public TextMeshProUGUI textoAvisoUI;
 
+    [Header("Audio de la puerta")]
+    public AudioSource fuenteAudioPuerta;
+    public AudioClip sonidoDesbloquearLlave;
+    public AudioClip sonidoAbrirPuerta;
+
     // Desacoplado de los inspectores: se resuelve automáticamente (Singleton / Trigger / Búsqueda)
     [HideInInspector] public Inventario inventarioJugador;
     private bool jugadorCerca = false;
@@ -66,11 +71,21 @@ public class PuertaConLlave : MonoBehaviour
 
     private void IntentarAbrir()
     {
-        if (estaAbierta)
+        if (inventarioJugador != null && inventarioJugador.TieneObjeto(llaveRequerida))
         {
             estaAbierta = false;
-            ActualizarTexto("Presiona [E] para abrir");
-            return;
+            ActualizarTexto("Presiona [F] para abrir");
+            
+            if (fuenteAudioPuerta != null)
+            {
+                if (sonidoDesbloquearLlave != null) fuenteAudioPuerta.PlayOneShot(sonidoDesbloquearLlave);
+                if (sonidoAbrirPuerta != null) fuenteAudioPuerta.PlayOneShot(sonidoAbrirPuerta);
+            }
+
+            if (consumirLlaveAlUsar)
+            {
+                inventarioJugador.EliminarObjeto(llaveRequerida);
+            }
         }
 
         Inventario inv = ObtenerInventario();
@@ -91,6 +106,12 @@ public class PuertaConLlave : MonoBehaviour
             estaAbierta = true;
             ActualizarTexto("Presiona [E] para cerrar");
 
+            if (fuenteAudioPuerta != null)
+            {
+                if (sonidoDesbloquearLlave != null) fuenteAudioPuerta.PlayOneShot(sonidoDesbloquearLlave);
+                if (sonidoAbrirPuerta != null) fuenteAudioPuerta.PlayOneShot(sonidoAbrirPuerta);
+            }
+            
             if (consumirLlaveAlUsar)
             {
                 inv.EliminarObjeto(llaveRequerida);

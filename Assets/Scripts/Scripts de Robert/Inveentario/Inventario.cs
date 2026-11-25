@@ -10,7 +10,8 @@ public class Inventario : MonoBehaviour
     [Header("Configuración UI - Panel")]
     public GameObject panelInventario; 
     public Transform contenedorSlots;   
-    public GameObject prefabSlot;      
+    public GameObject prefabSlot;
+    public TextMeshProUGUI textoDescripcionDocumento;
 
     [Header("Configuración UI - Pestañas")]
     public Button botonPestanaObjetos;
@@ -25,6 +26,10 @@ public class Inventario : MonoBehaviour
 
     [Header("Configuración para Soltar Ítems")]
     public KeyCode teclaSoltar = KeyCode.Q; 
+
+    [Header("Audio")]
+    public AudioSource fuenteAudio;
+    public AudioClip sonidoRecoger;
 
     private List<ItemData> items = new List<ItemData>();
     private TipoItem pestanaActual = TipoItem.Objeto; 
@@ -101,6 +106,12 @@ public class Inventario : MonoBehaviour
     public bool RecogerObjeto(ItemData item)
     {
         items.Add(item);
+        
+        if (fuenteAudio != null && sonidoRecoger != null)
+        {
+            fuenteAudio.PlayOneShot(sonidoRecoger);
+        }
+        
         ActualizarUI();
 
         if (GestorAnomalia.Instance != null)
@@ -161,6 +172,18 @@ public class Inventario : MonoBehaviour
                     scriptSlot.itemData = item;
                     scriptSlot.gestorDoc = gestorDocumentos;
                     scriptSlot.inventario = this; 
+                }
+
+                Button botonSlot = nuevoSlot.GetComponent<Button>();
+                if (botonSlot != null && pestanaActual == TipoItem.Documento)
+                {
+                    botonSlot.onClick.AddListener(() =>
+                    {
+                        if (textoDescripcionDocumento != null)
+                        {
+                            textoDescripcionDocumento.text = item.descripcion;
+                        }
+                    });
                 }
             }
         }

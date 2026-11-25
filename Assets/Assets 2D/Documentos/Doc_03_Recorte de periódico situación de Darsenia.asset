@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8f745dca6f250fa08cc524828051b14, type: 3}
+  m_Name: "Doc_03_Recorte de peri\xF3dico situaci\xF3n de Darsenia"
+  m_EditorClassIdentifier: Assembly-CSharp::ItemData
+  id: doc_03
+  nombre: "Recorte de peri\xF3dico: situaci\xF3n de Darsenia"
+  icono: {fileID: 21300000, guid: e21309f2d8a8c064e8b15effaa4aaede, type: 3}
+  descripcion: "Documento 3. Recorte de peri\xF3dico: situaci\xF3n de Darsenia\r\nRealidad
+    de Sea\r\nUBICACI\xD3N SUGERIDA: HABITACI\xD3N SECUNDARIA\r\n\r\nDARSENIA: LA
+    CRISIS CONTIN\xDAA Y CADA VEZ M\xC1S FAMILIAS BUSCAN ABANDONAR EL PA\xCDS\r\n\r\nLa
+    situaci\xF3n econ\xF3mica y pol\xEDtica de Darsenia contin\xFAa deterior\xE1ndose.
+    La escasez de recursos, el aumento de la delincuencia y las tensiones provocadas
+    por el conflicto entre naciones vecinas han complicado las condiciones de vida
+    de sus habitantes.\r\n\r\nAnte la falta de oportunidades y la incertidumbre sobre
+    el futuro, numerosas familias buscan alternativas para abandonar el pa\xEDs.\r\n\r\nSin
+    embargo, las restricciones fronterizas y los controles establecidos han provocado
+    que algunos ciudadanos recurran a rutas clandestinas y redes de traslado no autorizadas.\r\n\r\nLas
+    autoridades advierten sobre los riesgos de estas pr\xE1cticas, mientras muchas
+    familias contin\xFAan buscando una salida a la situaci\xF3n que atraviesa el
+    pa\xEDs."
+  tipo: 1

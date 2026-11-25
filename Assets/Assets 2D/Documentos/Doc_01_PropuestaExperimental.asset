@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8f745dca6f250fa08cc524828051b14, type: 3}
+  m_Name: Doc_01_PropuestaExperimental
+  m_EditorClassIdentifier: Assembly-CSharp::ItemData
+  id: doc_01
+  nombre: Propuesta del proyecto experimental
+  icono: {fileID: 21300000, guid: e21309f2d8a8c064e8b15effaa4aaede, type: 3}
+  descripcion: "Documento 1. Propuesta del proyecto experimental\r\nProyecto cient\xEDfico\r\nUBICACI\xD3N
+    SUGERIDA: OFICINA DE INVESTIGACI\xD3N\r\n\r\nPROYECTO DE CONEXI\xD3N ESPACIAL\r\n\r\nFase
+    experimental \u2014 Documento interno\r\n\r\nObjetivo del proyecto:\r\n\r\nEl
+    prop\xF3sito de esta investigaci\xF3n es desarrollar un sistema de transporte
+    capaz de reducir considerablemente el tiempo necesario para desplazarse entre
+    dos puntos distantes.\r\n\r\nMediante la manipulaci\xF3n controlada del espacio,
+    se pretende establecer una conexi\xF3n temporal que permita trasladar personas
+    y objetos en cuesti\xF3n de segundos, sin necesidad de recorrer f\xEDsicamente
+    la distancia que los separa.\r\n\r\nLas primeras pruebas han demostrado resultados
+    prometedores. Sin embargo, todav\xEDa es necesario perfeccionar la estabilidad
+    de la conexi\xF3n y garantizar que el proceso pueda realizarse sin alteraciones.\r\n\r\nEstado
+    actual: Fase experimental.\r\n\r\nObservaci\xF3n: No se autoriza el uso del sistema
+    fuera de las pruebas supervisadas."
+  tipo: 1

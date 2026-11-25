@@ -10,6 +10,11 @@ public class DetectorNPC : MonoBehaviour
 
     [Header("Configuración de audio")]
     public AudioSource fuenteAudio;
+
+    [Header("Requisito de objeto")]
+    public Inventario inventarioJugador;
+    public ItemData objetoDetectorRequerido;
+
     public AudioClip sonidoPitido;
     [Tooltip("Tiempo entre pitidos cuando el NPC está lejos")]
     public float intervaloMaximo = 1.5f;
@@ -20,6 +25,11 @@ public class DetectorNPC : MonoBehaviour
 
     void Update()
     {
+        if (inventarioJugador != null && objetoDetectorRequerido != null)
+        {
+            if (!inventarioJugador.TieneObjeto(objetoDetectorRequerido)) return;
+        }
+        
         float distanciaMasCercana = ObtenerDistanciaNPCMasCercano();
 
         if (distanciaMasCercana <= radioDeteccion)
