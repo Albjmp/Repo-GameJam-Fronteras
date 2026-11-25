@@ -13,10 +13,20 @@ public class PauseMenuManager : MonoBehaviour
     public GameObject barraLinternaUI;
     public GameObject barraEstaminaUI;
 
+    [Header("Audio de música en pausa")]
+    public AudioSource musicaNivel;
+    [Range(0f, 1f)] public float multiplicadorVolumenPausa = 0.25f;
+    private float volumenOriginalMusica = 1f;
+
     private bool isPaused = false;
 
     void Start()
     {
+        if (musicaNivel != null)
+        {
+            volumenOriginalMusica = musicaNivel.volume;
+        }
+
         ResumeGame();
     }
 
@@ -55,6 +65,11 @@ public class PauseMenuManager : MonoBehaviour
 
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+
+        if (musicaNivel != null)
+        {
+            musicaNivel.volume = volumenOriginalMusica * multiplicadorVolumenPausa;
+        }
     }
 
     public void ResumeGame()
@@ -93,6 +108,11 @@ public class PauseMenuManager : MonoBehaviour
 
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+
+        if (musicaNivel != null)
+        {
+            musicaNivel.volume = volumenOriginalMusica;
+        }
     }
 
     public void LoadMainMenu()
