@@ -39,6 +39,10 @@ public class ControladorJugador : MonoBehaviour
     [SerializeField] private float gravedad = -9.81f;
     private Vector3 velocidadGravedad;
 
+    [Header("Audio de movimiento")]
+    public AudioSource audioCaminar;
+    private bool estaCorriendo = false;
+
     private void Awake()
     {
         characterController = GetComponent<CharacterController>();
@@ -106,14 +110,18 @@ public class ControladorJugador : MonoBehaviour
     }
     private void ManejarEstaminaYCorrer()
     {
-        if (protagonistaActivo != Protagonista.Sean) return;
-
+        if (protagonistaActivo != Protagonista.Sean)
+        {
+            estaCorriendo = false;
+            return;
+        }
         bool presionandoShift = Keyboard.current != null && Keyboard.current.leftShiftKey.isPressed;
         //bool estaMoviendose = Input.GetAxis("Horizontal") != 0f || Input.GetAxis("Vertical") != 0f;
         bool estaMoviendose = ObtenerInputMovimiento().magnitude > 0.1f;
 
         if (presionandoShift && estaMoviendose && estaminaActual > 0f && !agotado)
         {
+            estaCorriendo = true;
             velocidadMovimiento = velocidadCorrerSean;
             estaminaActual -= consumoEstamina * Time.deltaTime;
 
@@ -124,6 +132,7 @@ public class ControladorJugador : MonoBehaviour
             }
         } else
         {
+            estaCorriendo = false;
             velocidadMovimiento = velocidadBase;
 
             if (estaminaActual < estaminaMaxima)
@@ -179,6 +188,19 @@ public class ControladorJugador : MonoBehaviour
         if (characterController.isGrounded && velocidadGravedad.y < 0)
         {
             velocidadGravedad.y = -2f;
+        }
+
+        bool estaCaminando = characterController.isGrounded && input.magnitude > 0.1f && !estaCorriendo;
+
+        if (audioCaminar != null)
+        {
+            if (estaCaminando && !audioCaminar.isPlaying)
+            {
+                audioCaminar.Play();
+            } else if (!estaCaminando && audioCaminar.isPlaying)
+            {
+                audioCaminar.Stop();
+            }
         }
 
         if (protagonistaActivo == Protagonista.Sean)

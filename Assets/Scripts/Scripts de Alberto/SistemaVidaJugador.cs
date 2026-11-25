@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
+using Unity.VisualScripting;
 
 public class SistemaVidaJugador : MonoBehaviour
 {
@@ -16,8 +17,13 @@ public class SistemaVidaJugador : MonoBehaviour
     [Header("Interfaz de usuario (6 imágenes)")]
     public Image imagenVidaUI;
 
+    [Header("Audio")]
+    public AudioSource fuenteAudio;
+    public AudioClip sonidoDano;
+
     [Tooltip("Asigna 6 sprites en orden: [0] = 0 vidas, [1] = 1 vida, [2] = 2 vidas, [3] = 3 vidas, [4] = 4 vidas, [5] = Vida completa")]
     public Sprite[] spritesDeVida = new Sprite[6];
+
 
     private void Start()
     {
@@ -47,6 +53,11 @@ public class SistemaVidaJugador : MonoBehaviour
         temporizadorInvulnerable = tiempoInvulnerable;
 
         ActualizarImagenVida();
+
+        if (fuenteAudio != null && sonidoDano != null)
+        {
+            fuenteAudio.PlayOneShot(sonidoDano);
+        }
 
         Debug.Log($"¡Jugador golpeado! Golpes: {golpesRecibidos} / {golpesMaximos}");
 

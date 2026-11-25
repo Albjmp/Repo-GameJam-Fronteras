@@ -20,6 +20,10 @@ public class Inventario : MonoBehaviour
     public GameObject lineaObjetos;
     public GameObject lineaDocumentos;
 
+    [Header("Audio")]
+    public AudioSource fuenteAudio;
+    public AudioClip sonidoRecoger;
+
     private List<ItemData> items = new List<ItemData>();
     private TipoItem pestanaActual = TipoItem.Objeto; 
 
@@ -83,6 +87,12 @@ public class Inventario : MonoBehaviour
     public bool RecogerObjeto(ItemData item)
     {
         items.Add(item);
+        
+        if (fuenteAudio != null && sonidoRecoger != null)
+        {
+            fuenteAudio.PlayOneShot(sonidoRecoger);
+        }
+        
         ActualizarUI();
         return true;
     }
