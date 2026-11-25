@@ -348,6 +348,12 @@ MonoBehaviour:
   anguloApertura: 90
   velocidadApertura: 3
   textoAvisoUI: {fileID: 427340312}
+  fuenteAudioPuerta: {fileID: 0}
+  sonidoDesbloquearLlave: {fileID: 0}
+  sonidoAbrirPuerta: {fileID: 0}
+  onPuertaAbierta:
+    m_PersistentCalls:
+      m_Calls: []
   inventarioJugador: {fileID: 1570172371}
 --- !u!4 &81723506
 Transform:
@@ -7056,7 +7062,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1330331829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8784,6 +8790,7 @@ MonoBehaviour:
   alturaSaltoSean: 1.2
   sensibilidadRaton: 0.2
   gravedad: -9.81
+  audioCaminar: {fileID: 0}
 --- !u!143 &1570172368
 CharacterController:
   m_ObjectHideFlags: 0
@@ -8856,12 +8863,15 @@ MonoBehaviour:
   panelInventario: {fileID: 1330331828}
   contenedorSlots: {fileID: 1876235088}
   prefabSlot: {fileID: 5382131263531820182, guid: b10ff75e3ce9a8d8682a709522cb4fad, type: 3}
+  textoDescripcionDocumento: {fileID: 0}
   botonPestanaObjetos: {fileID: 266212783}
   botonPestanaDocumentos: {fileID: 1221998741}
   lineaObjetos: {fileID: 1569561974}
   lineaDocumentos: {fileID: 1925020602}
   gestorDocumentos: {fileID: 964991333}
   teclaSoltar: 118
+  fuenteAudio: {fileID: 0}
+  sonidoRecoger: {fileID: 0}
 --- !u!114 &1570172372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8904,6 +8914,8 @@ MonoBehaviour:
   golpesMaximos: 5
   tiempoInvulnerable: 1.5
   imagenVidaUI: {fileID: 1529968228}
+  fuenteAudio: {fileID: 0}
+  sonidoDano: {fileID: 0}
   spritesDeVida:
   - {fileID: 21300000, guid: 49d7b479e526ae14b91fa4e8361441d7, type: 3}
   - {fileID: 21300000, guid: 5acf481280da94041b278397bbb7f0e5, type: 3}
@@ -8926,12 +8938,15 @@ MonoBehaviour:
   panelInventario: {fileID: 1330331828}
   contenedorSlots: {fileID: 1876235088}
   prefabSlot: {fileID: 5382131263531820182, guid: b10ff75e3ce9a8d8682a709522cb4fad, type: 3}
+  textoDescripcionDocumento: {fileID: 0}
   botonPestanaObjetos: {fileID: 266212783}
   botonPestanaDocumentos: {fileID: 1221998741}
   lineaObjetos: {fileID: 1569561974}
   lineaDocumentos: {fileID: 1925020602}
   gestorDocumentos: {fileID: 964991333}
   teclaSoltar: 113
+  fuenteAudio: {fileID: 0}
+  sonidoRecoger: {fileID: 0}
 --- !u!114 &1570172376
 MonoBehaviour:
   m_ObjectHideFlags: 0
