@@ -40,15 +40,15 @@ public class EnemigoVigilante : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, rangoDeVision);
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
+{
+    if (other.CompareTag("Player") || other.transform.root.CompareTag("Player"))
     {
-        if (other.CompareTag("Player"))
+        SistemaVidaJugador vida = other.GetComponentInParent<SistemaVidaJugador>();
+        if (vida != null)
         {
-            SistemaVidaJugador vida = other.GetComponent<SistemaVidaJugador>();
-            if (vida != null)
-            {
-                vida.RecibirGolpe();
-            }
+            vida.RecibirGolpe();
         }
     }
+}
 }
