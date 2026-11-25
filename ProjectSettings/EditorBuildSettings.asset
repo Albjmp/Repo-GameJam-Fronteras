@@ -9,6 +9,12 @@ EditorBuildSettings:
     path: Assets/MainMenu.unity
     guid: f3dbd14305b5db141920b092377e280c
   - enabled: 1
+    path: Assets/Nivel1_Sean_Callejon.unity
+    guid: b6a91ca7bc8aaad4bbc1dc8710789f93
+  - enabled: 1
+    path: Assets/Nivel2-3_Ivo_Subterraneo.unity
+    guid: 4eb4a614eb2b16c4f8ac76e6422ca1c4
+  - enabled: 0
     path: Assets/Level1-Provisional.unity
     guid: 6b2c49c651c61f441a4144b93836ae53
   - enabled: 0
