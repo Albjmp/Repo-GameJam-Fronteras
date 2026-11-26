@@ -11,7 +11,7 @@ public class Inventario : MonoBehaviour
     public GameObject panelInventario; 
     public Transform contenedorSlots;   
     public GameObject prefabSlot;
-    public TextMeshProUGUI textoDescripcionDocumento;
+    //public TextMeshProUGUI textoDescripcionDocumento;
 
     [Header("Configuración UI - Pestañas")]
     public Button botonPestanaObjetos;
@@ -105,6 +105,11 @@ public class Inventario : MonoBehaviour
 
     public bool RecogerObjeto(ItemData item)
     {
+        if (items.Contains(item))
+        {
+            return true;
+        }
+        
         items.Add(item);
         
         if (fuenteAudio != null && sonidoRecoger != null)
@@ -174,17 +179,17 @@ public class Inventario : MonoBehaviour
                     scriptSlot.inventario = this; 
                 }
 
-                Button botonSlot = nuevoSlot.GetComponent<Button>();
-                if (botonSlot != null && pestanaActual == TipoItem.Documento)
-                {
-                    botonSlot.onClick.AddListener(() =>
-                    {
-                        if (textoDescripcionDocumento != null)
-                        {
-                            textoDescripcionDocumento.text = item.descripcion;
-                        }
-                    });
-                }
+                //Button botonSlot = nuevoSlot.GetComponent<Button>();
+                //if (botonSlot != null && pestanaActual == TipoItem.Documento)
+                //{
+                    //botonSlot.onClick.AddListener(() =>
+                    //{
+                        //if (textoDescripcionDocumento != null)
+                        //{
+                            //textoDescripcionDocumento.text = item.descripcion;
+                        //}
+                    //});
+                //}
             }
         }
     }
