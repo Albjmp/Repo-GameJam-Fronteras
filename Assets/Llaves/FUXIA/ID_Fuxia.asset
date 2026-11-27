@@ -18,3 +18,4 @@ MonoBehaviour:
   descripcion: 
   tipo: 0
   prefabMundo: {fileID: 4973445761417608859, guid: c528a285bcae01be1aa14f8c3043c4f3, type: 3}
+  sonidoAlRecoger: {fileID: 8300000, guid: b82aadf1f196684478bca1761d646e45, type: 3}

@@ -41,6 +41,8 @@ public class ControladorJugador : MonoBehaviour
 
     [Header("Audio de movimiento")]
     public AudioSource audioCaminar;
+    public AudioClip sonidoCaminarNormal;
+    public AudioClip sonidoCorrerSprint;
     private bool estaCorriendo = false;
 
     private void Awake()
@@ -190,18 +192,30 @@ public class ControladorJugador : MonoBehaviour
             velocidadGravedad.y = -2f;
         }
 
-        bool estaCaminando = characterController.isGrounded && input.magnitude > 0.1f && !estaCorriendo;
+        bool enMovimientoEnSuelo = characterController.isGrounded && input.magnitude > 0.1f;
 
         if (audioCaminar != null)
         {
-            if (estaCaminando && !audioCaminar.isPlaying)
+            if (enMovimientoEnSuelo)
             {
-                audioCaminar.Play();
-            } else if (!estaCaminando && audioCaminar.isPlaying)
+                AudioClip clipDeseado = estaCorriendo ? sonidoCorrerSprint : sonidoCaminarNormal;
+
+                if (clipDeseado != null && audioCaminar.clip != clipDeseado)
+                {
+                    audioCaminar.clip = clipDeseado;
+                    audioCaminar.Play();
+                }
+                else if (!audioCaminar.isPlaying)
+                {
+                    audioCaminar.Play();
+                }
+            }
+            else if (audioCaminar.isPlaying)
             {
                 audioCaminar.Stop();
             }
         }
+
 
         if (protagonistaActivo == Protagonista.Sean)
         {

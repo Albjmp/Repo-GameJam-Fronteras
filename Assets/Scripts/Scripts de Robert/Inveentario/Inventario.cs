@@ -30,6 +30,8 @@ public class Inventario : MonoBehaviour
     [Header("Audio")]
     public AudioSource fuenteAudio;
     public AudioClip sonidoRecoger;
+    public AudioClip sonidoAbrirInventario;
+    public AudioClip sonidoCerrarInventario;
 
     private List<ItemData> items = new List<ItemData>();
     private TipoItem pestanaActual = TipoItem.Objeto; 
@@ -60,6 +62,20 @@ public class Inventario : MonoBehaviour
             AlternarInventario();
         }
 
+        if (panelInventario != null && panelInventario.activeSelf && Input.GetKeyDown(KeyCode.Escape))
+        {
+            // Si está leyendo un documento abierto, primero vuelve atrás a la lista de documentos
+            if (gestorDocumentos != null && gestorDocumentos.panelLectura != null && gestorDocumentos.panelLectura.activeSelf)
+            {
+                gestorDocumentos.CerrarDocumento();
+            }
+            else
+            {
+                // Si está en la lista principal del inventario, cierra el inventario completo
+                AlternarInventario();
+            }
+        }
+
         // Soltar ítem si el inventario está abierto y presionas la tecla
         if (panelInventario != null && panelInventario.activeSelf && Input.GetKeyDown(teclaSoltar))
         {
@@ -76,6 +92,11 @@ public class Inventario : MonoBehaviour
         
         if (abrir) 
         {
+            if (fuenteAudio != null && sonidoAbrirInventario != null)
+            {
+                fuenteAudio.PlayOneShot(sonidoAbrirInventario);
+            }
+            
             CambiarPestana(TipoItem.Objeto); 
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
@@ -83,6 +104,11 @@ public class Inventario : MonoBehaviour
         }
         else
         {
+            if (fuenteAudio != null && sonidoCerrarInventario != null)
+            {
+                fuenteAudio.PlayOneShot(sonidoCerrarInventario);
+            }
+            
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
             Time.timeScale = 1f; 
@@ -112,9 +138,9 @@ public class Inventario : MonoBehaviour
         
         items.Add(item);
         
-        if (fuenteAudio != null && sonidoRecoger != null)
+        if (fuenteAudio != null && item.sonidoAlRecoger != null)
         {
-            fuenteAudio.PlayOneShot(sonidoRecoger);
+            fuenteAudio.PlayOneShot(item.sonidoAlRecoger);
         }
         
         ActualizarUI();

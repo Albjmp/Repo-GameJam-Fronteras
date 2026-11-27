@@ -280,6 +280,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 648006}
+  - component: {fileID: 648007}
   m_Layer: 0
   m_Name: Puertas
   m_TagString: Untagged
@@ -311,6 +312,103 @@ Transform:
   - {fileID: 1362391031}
   m_Father: {fileID: 1185567429}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &648007
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 648005}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 5672211555039708103, guid: a2cd920fcfa51b44184666ddc0119ddc, type: 2}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 4aef72b4879a5a446a8abdb043480985, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &2372753
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3758,11 +3856,11 @@ Transform:
   m_GameObject: {fileID: 67020953}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.23188142, z: -0, w: 0.97274405}
-  m_LocalPosition: {x: 375.22, y: 2.76, z: 814.64}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalPosition: {x: -49.589996, y: 1.05, z: -52.75}
+  m_LocalScale: {x: 0.10000001, y: 0.1, z: 0.10000001}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2042101466}
   m_LocalEulerAnglesHint: {x: 0, y: -26.816, z: 0}
 --- !u!114 &67020957
 MonoBehaviour:
@@ -14173,12 +14271,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 257229974}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 435.2904, y: 1.86, z: 822.75}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 10.480408, y: 0.14999998, z: -44.640015}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2042101466}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &257229978
 MonoBehaviour:
@@ -17863,7 +17961,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 4
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -18274,8 +18372,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SonidosBotonUI
   fuenteAudioUI: {fileID: 461450226}
-  sonidoHover: {fileID: 8300000, guid: 9f971aed45f53a746b8bd5df85929b4b, type: 3}
-  sonidoClic: {fileID: 8300000, guid: 215221032236edf42a916ba2671af0e7, type: 3}
+  sonidoHover: {fileID: 8300000, guid: 81a4add562a666d4ebdc023d9a6adeef, type: 3}
+  sonidoClic: {fileID: 8300000, guid: 6e23ddc7fb36b3f40b64a6de8516d6ab, type: 3}
 --- !u!114 &353790828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26317,11 +26415,11 @@ Transform:
   m_GameObject: {fileID: 501571442}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.539326, z: -0, w: 0.8420971}
-  m_LocalPosition: {x: 414.52, y: 1.6468229, z: 815.03}
+  m_LocalPosition: {x: -10.290009, y: -0.06317711, z: -52.359985}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2042101466}
   m_LocalEulerAnglesHint: {x: 0, y: 65.276, z: 0}
 --- !u!114 &501571446
 MonoBehaviour:
@@ -30728,6 +30826,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1692269114}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: PlayOneShot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 81a4add562a666d4ebdc023d9a6adeef, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &575185503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31177,11 +31287,11 @@ Transform:
   m_GameObject: {fileID: 579658151}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7136452, z: -0, w: 0.70050734}
-  m_LocalPosition: {x: 362.2142, y: 12.56, z: 816.54767}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalPosition: {x: -62.595795, y: 10.85, z: -50.842346}
+  m_LocalScale: {x: 0.099999994, y: 0.1, z: 0.099999994}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2042101466}
   m_LocalEulerAnglesHint: {x: 0, y: 91.065, z: 0}
 --- !u!114 &579658155
 MonoBehaviour:
@@ -31759,6 +31869,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1692269114}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: PlayOneShot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 81a4add562a666d4ebdc023d9a6adeef, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &588810345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32246,6 +32368,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1692269114}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: PlayOneShot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 81a4add562a666d4ebdc023d9a6adeef, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &592951350
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32652,6 +32786,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1692269114}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: PlayOneShot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 81a4add562a666d4ebdc023d9a6adeef, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -33853,11 +33999,11 @@ Transform:
   m_GameObject: {fileID: 627522024}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.30303937, z: -0, w: 0.95297813}
-  m_LocalPosition: {x: 400.23, y: 1.76, z: 922.3}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalPosition: {x: -24.579987, y: 0.049999952, z: 54.909973}
+  m_LocalScale: {x: 0.10000001, y: 0.1, z: 0.10000001}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2042101466}
   m_LocalEulerAnglesHint: {x: 0, y: 35.281, z: 0}
 --- !u!114 &627522028
 MonoBehaviour:
@@ -34214,6 +34360,7 @@ MonoBehaviour:
   fuenteAudioPuerta: {fileID: 0}
   sonidoDesbloquearLlave: {fileID: 0}
   sonidoAbrirPuerta: {fileID: 0}
+  sonidoPuertaCerrada: {fileID: 0}
   onPuertaAbierta:
     m_PersistentCalls:
       m_Calls: []
@@ -44218,9 +44365,10 @@ MonoBehaviour:
   velocidadApertura: 3
   textoAvisoUI: {fileID: 0}
   iconoCandadoUI: {fileID: 788448297}
-  fuenteAudioPuerta: {fileID: 0}
+  fuenteAudioPuerta: {fileID: 648007}
   sonidoDesbloquearLlave: {fileID: 0}
-  sonidoAbrirPuerta: {fileID: 0}
+  sonidoAbrirPuerta: {fileID: 8300000, guid: 4aef72b4879a5a446a8abdb043480985, type: 3}
+  sonidoPuertaCerrada: {fileID: 8300000, guid: 7f9ea89f6fc288047a55a9662cb7dd83, type: 3}
   onPuertaAbierta:
     m_PersistentCalls:
       m_Calls: []
@@ -46158,8 +46306,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SonidosBotonUI
   fuenteAudioUI: {fileID: 461450226}
-  sonidoHover: {fileID: 8300000, guid: 9f971aed45f53a746b8bd5df85929b4b, type: 3}
-  sonidoClic: {fileID: 8300000, guid: 215221032236edf42a916ba2671af0e7, type: 3}
+  sonidoHover: {fileID: 8300000, guid: 81a4add562a666d4ebdc023d9a6adeef, type: 3}
+  sonidoClic: {fileID: 8300000, guid: 6e23ddc7fb36b3f40b64a6de8516d6ab, type: 3}
 --- !u!114 &852813853
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49864,7 +50012,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 4
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -50726,6 +50874,7 @@ MonoBehaviour:
   fuenteAudioPuerta: {fileID: 1740654539}
   sonidoDesbloquearLlave: {fileID: 8300000, guid: 2f5e3077582209e418ee98dd03e7a30a, type: 3}
   sonidoAbrirPuerta: {fileID: 8300000, guid: 8ef873227457f8b4db40f2b1685864fa, type: 3}
+  sonidoPuertaCerrada: {fileID: 0}
   onPuertaAbierta:
     m_PersistentCalls:
       m_Calls: []
@@ -54456,7 +54605,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1000514569}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1692269114}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: PlayOneShot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 81a4add562a666d4ebdc023d9a6adeef, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1000514569
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54894,7 +55055,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 4
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -55790,11 +55951,11 @@ Transform:
   m_GameObject: {fileID: 1023421622}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.5596585, z: -0, w: 0.8287233}
-  m_LocalPosition: {x: 424.81, y: 1.71, z: 867.39}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2042101466}
   m_LocalEulerAnglesHint: {x: 0, y: -68.064, z: 0}
 --- !u!114 &1023421626
 MonoBehaviour:
@@ -58731,12 +58892,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1074547616}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 384.24, y: 3.01, z: 746.28}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -40.570007, y: 1.3, z: -121.109985}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2042101466}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1074547620
 MonoBehaviour:
@@ -62343,9 +62504,10 @@ MonoBehaviour:
   velocidadApertura: 3
   textoAvisoUI: {fileID: 0}
   iconoCandadoUI: {fileID: 0}
-  fuenteAudioPuerta: {fileID: 0}
+  fuenteAudioPuerta: {fileID: 648007}
   sonidoDesbloquearLlave: {fileID: 0}
-  sonidoAbrirPuerta: {fileID: 0}
+  sonidoAbrirPuerta: {fileID: 8300000, guid: 4aef72b4879a5a446a8abdb043480985, type: 3}
+  sonidoPuertaCerrada: {fileID: 8300000, guid: 7f9ea89f6fc288047a55a9662cb7dd83, type: 3}
   onPuertaAbierta:
     m_PersistentCalls:
       m_Calls: []
@@ -62368,9 +62530,10 @@ MonoBehaviour:
   velocidadApertura: 3
   textoAvisoUI: {fileID: 0}
   iconoCandadoUI: {fileID: 788448297}
-  fuenteAudioPuerta: {fileID: 0}
+  fuenteAudioPuerta: {fileID: 1740654539}
   sonidoDesbloquearLlave: {fileID: 0}
   sonidoAbrirPuerta: {fileID: 0}
+  sonidoPuertaCerrada: {fileID: 8300000, guid: 7f9ea89f6fc288047a55a9662cb7dd83, type: 3}
   onPuertaAbierta:
     m_PersistentCalls:
       m_Calls: []
@@ -64408,7 +64571,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1193214548}
-  m_LocalRotation: {x: 0.08418875, y: -0.2462565, z: 0.083579235, w: 0.9619171}
+  m_LocalRotation: {x: 0.2325218, y: -0.37588033, z: 0.09064851, w: 0.89242953}
   m_LocalPosition: {x: 0, y: 0, z: -79.799965}
   m_LocalScale: {x: 1.4500004, y: 1.4500004, z: 1.4500004}
   m_ConstrainProportionsScale: 1
@@ -64418,7 +64581,7 @@ RectTransform:
   - {fileID: 353790826}
   - {fileID: 2011439186}
   m_Father: {fileID: 234919443}
-  m_LocalEulerAnglesHint: {x: 11.72, y: -28, z: 7}
+  m_LocalEulerAnglesHint: {x: 28.892, y: -45.9, z: -0.851}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -333.8501, y: 96.45001}
@@ -64847,9 +65010,10 @@ MonoBehaviour:
   velocidadApertura: 3
   textoAvisoUI: {fileID: 0}
   iconoCandadoUI: {fileID: 788448297}
-  fuenteAudioPuerta: {fileID: 0}
+  fuenteAudioPuerta: {fileID: 648007}
   sonidoDesbloquearLlave: {fileID: 0}
-  sonidoAbrirPuerta: {fileID: 0}
+  sonidoAbrirPuerta: {fileID: 8300000, guid: 4aef72b4879a5a446a8abdb043480985, type: 3}
+  sonidoPuertaCerrada: {fileID: 8300000, guid: 7f9ea89f6fc288047a55a9662cb7dd83, type: 3}
   onPuertaAbierta:
     m_PersistentCalls:
       m_Calls: []
@@ -67606,6 +67770,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1692269114}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: PlayOneShot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 81a4add562a666d4ebdc023d9a6adeef, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -71917,6 +72093,7 @@ MonoBehaviour:
   fuenteAudioPuerta: {fileID: 0}
   sonidoDesbloquearLlave: {fileID: 0}
   sonidoAbrirPuerta: {fileID: 0}
+  sonidoPuertaCerrada: {fileID: 0}
   onPuertaAbierta:
     m_PersistentCalls:
       m_Calls: []
@@ -77718,9 +77895,10 @@ MonoBehaviour:
   velocidadApertura: 3
   textoAvisoUI: {fileID: 0}
   iconoCandadoUI: {fileID: 788448297}
-  fuenteAudioPuerta: {fileID: 0}
+  fuenteAudioPuerta: {fileID: 648007}
   sonidoDesbloquearLlave: {fileID: 0}
-  sonidoAbrirPuerta: {fileID: 0}
+  sonidoAbrirPuerta: {fileID: 8300000, guid: 4aef72b4879a5a446a8abdb043480985, type: 3}
+  sonidoPuertaCerrada: {fileID: 8300000, guid: 7f9ea89f6fc288047a55a9662cb7dd83, type: 3}
   onPuertaAbierta:
     m_PersistentCalls:
       m_Calls: []
@@ -78112,6 +78290,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1692269114}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: PlayOneShot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 81a4add562a666d4ebdc023d9a6adeef, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -86401,6 +86591,7 @@ MonoBehaviour:
   fuenteAudioPuerta: {fileID: 0}
   sonidoDesbloquearLlave: {fileID: 0}
   sonidoAbrirPuerta: {fileID: 0}
+  sonidoPuertaCerrada: {fileID: 0}
   onPuertaAbierta:
     m_PersistentCalls:
       m_Calls: []
@@ -88195,8 +88386,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SonidosBotonUI
   fuenteAudioUI: {fileID: 461450226}
-  sonidoHover: {fileID: 8300000, guid: 9f971aed45f53a746b8bd5df85929b4b, type: 3}
-  sonidoClic: {fileID: 8300000, guid: 215221032236edf42a916ba2671af0e7, type: 3}
+  sonidoHover: {fileID: 8300000, guid: 81a4add562a666d4ebdc023d9a6adeef, type: 3}
+  sonidoClic: {fileID: 8300000, guid: 6e23ddc7fb36b3f40b64a6de8516d6ab, type: 3}
 --- !u!114 &1620585213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -89138,6 +89329,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1692269114}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: PlayOneShot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 81a4add562a666d4ebdc023d9a6adeef, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -90881,6 +91084,7 @@ GameObject:
   - component: {fileID: 1671704220}
   - component: {fileID: 1671704223}
   - component: {fileID: 1671704224}
+  - component: {fileID: 1671704225}
   m_Layer: 0
   m_Name: Gestor_Juego
   m_TagString: Untagged
@@ -91041,6 +91245,103 @@ MonoBehaviour:
   masterSlider: {fileID: 1820884598}
   musicSlider: {fileID: 377671403}
   sfxSlider: {fileID: 378794863}
+--- !u!82 &1671704225
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1671704218}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 5672211555039708103, guid: a2cd920fcfa51b44184666ddc0119ddc, type: 2}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &1673007079
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -92100,6 +92401,7 @@ GameObject:
   - component: {fileID: 1692269111}
   - component: {fileID: 1692269110}
   - component: {fileID: 1692269109}
+  - component: {fileID: 1692269114}
   m_Layer: 5
   m_Name: CANVAS_PUZZLE
   m_TagString: Untagged
@@ -92231,6 +92533,103 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!82 &1692269114
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1692269108}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 5672211555039708103, guid: a2cd920fcfa51b44184666ddc0119ddc, type: 2}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 81a4add562a666d4ebdc023d9a6adeef, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &1692745668
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -94642,9 +95041,10 @@ MonoBehaviour:
   velocidadApertura: 3
   textoAvisoUI: {fileID: 0}
   iconoCandadoUI: {fileID: 788448297}
-  fuenteAudioPuerta: {fileID: 0}
+  fuenteAudioPuerta: {fileID: 648007}
   sonidoDesbloquearLlave: {fileID: 0}
-  sonidoAbrirPuerta: {fileID: 0}
+  sonidoAbrirPuerta: {fileID: 8300000, guid: 4aef72b4879a5a446a8abdb043480985, type: 3}
+  sonidoPuertaCerrada: {fileID: 8300000, guid: 7f9ea89f6fc288047a55a9662cb7dd83, type: 3}
   onPuertaAbierta:
     m_PersistentCalls:
       m_Calls: []
@@ -94790,6 +95190,8 @@ MonoBehaviour:
   sensibilidadRaton: 0.2
   gravedad: -9.81
   audioCaminar: {fileID: 1740654539}
+  sonidoCaminarNormal: {fileID: 8300000, guid: 53cfd8e0950e7904d9a13e0a7be6d951, type: 3}
+  sonidoCorrerSprint: {fileID: 8300000, guid: 93ad10feae60bf14390e1ff840a35deb, type: 3}
 --- !u!4 &1740654537
 Transform:
   m_ObjectHideFlags: 0
@@ -94817,7 +95219,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 5672211555039708103, guid: a2cd920fcfa51b44184666ddc0119ddc, type: 2}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: e1e4251d94c83c446a87c2cc0e10b3f3, type: 3}
+  m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -94954,8 +95356,8 @@ MonoBehaviour:
   golpesMaximos: 5
   tiempoInvulnerable: 1.5
   imagenVidaUI: {fileID: 2035441128}
-  fuenteAudio: {fileID: 0}
-  sonidoDano: {fileID: 0}
+  fuenteAudio: {fileID: 1740654539}
+  sonidoDano: {fileID: 8300000, guid: fc2ea0b9856c3bc4d99e10fab03b3db3, type: 3}
   spritesDeVida:
   - {fileID: 21300000, guid: 49d7b479e526ae14b91fa4e8361441d7, type: 3}
   - {fileID: 21300000, guid: 5acf481280da94041b278397bbb7f0e5, type: 3}
@@ -94999,8 +95401,10 @@ MonoBehaviour:
   lineaDocumentos: {fileID: 1925020602}
   gestorDocumentos: {fileID: 964991333}
   teclaSoltar: 113
-  fuenteAudio: {fileID: 0}
-  sonidoRecoger: {fileID: 0}
+  fuenteAudio: {fileID: 1671704225}
+  sonidoRecoger: {fileID: 8300000, guid: b82aadf1f196684478bca1761d646e45, type: 3}
+  sonidoAbrirInventario: {fileID: 8300000, guid: 52244e2e6c3072d4db86df06049600fb, type: 3}
+  sonidoCerrarInventario: {fileID: 8300000, guid: 52244e2e6c3072d4db86df06049600fb, type: 3}
 --- !u!82 &1740654545
 AudioSource:
   m_ObjectHideFlags: 0
@@ -98060,12 +98464,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1788793587}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 462.97, y: 2.66, z: 765.1475}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 38.160004, y: 0.95000005, z: -102.24249}
+  m_LocalScale: {x: 0.10000001, y: 0.1, z: 0.10000001}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2042101466}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!114 &1788793591
 MonoBehaviour:
@@ -101046,7 +101450,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 4
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -102594,9 +102998,10 @@ MonoBehaviour:
   velocidadApertura: 3
   textoAvisoUI: {fileID: 0}
   iconoCandadoUI: {fileID: 788448297}
-  fuenteAudioPuerta: {fileID: 0}
+  fuenteAudioPuerta: {fileID: 648007}
   sonidoDesbloquearLlave: {fileID: 0}
-  sonidoAbrirPuerta: {fileID: 0}
+  sonidoAbrirPuerta: {fileID: 8300000, guid: 4aef72b4879a5a446a8abdb043480985, type: 3}
+  sonidoPuertaCerrada: {fileID: 8300000, guid: 7f9ea89f6fc288047a55a9662cb7dd83, type: 3}
   onPuertaAbierta:
     m_PersistentCalls:
       m_Calls: []
@@ -103569,6 +103974,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1692269114}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: PlayOneShot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 81a4add562a666d4ebdc023d9a6adeef, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -109447,6 +109864,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1692269114}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: PlayOneShot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 81a4add562a666d4ebdc023d9a6adeef, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1970422012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109816,9 +110245,10 @@ MonoBehaviour:
   velocidadApertura: 3
   textoAvisoUI: {fileID: 0}
   iconoCandadoUI: {fileID: 788448297}
-  fuenteAudioPuerta: {fileID: 0}
+  fuenteAudioPuerta: {fileID: 648007}
   sonidoDesbloquearLlave: {fileID: 0}
-  sonidoAbrirPuerta: {fileID: 0}
+  sonidoAbrirPuerta: {fileID: 8300000, guid: 4aef72b4879a5a446a8abdb043480985, type: 3}
+  sonidoPuertaCerrada: {fileID: 8300000, guid: 7f9ea89f6fc288047a55a9662cb7dd83, type: 3}
   onPuertaAbierta:
     m_PersistentCalls:
       m_Calls: []
@@ -111729,6 +112159,7 @@ MonoBehaviour:
   fuenteAudioPuerta: {fileID: 0}
   sonidoDesbloquearLlave: {fileID: 0}
   sonidoAbrirPuerta: {fileID: 0}
+  sonidoPuertaCerrada: {fileID: 0}
   onPuertaAbierta:
     m_PersistentCalls:
       m_Calls: []
@@ -112227,7 +112658,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2011439185}
   m_LocalRotation: {x: 0.008414941, y: 0.22686341, z: -0.10500863, w: 0.9682125}
-  m_LocalPosition: {x: 0, y: 0, z: -8}
+  m_LocalPosition: {x: 0, y: 0, z: -5.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -112236,7 +112667,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 3.666, y: 26.004, z: -11.533}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 102, y: -68}
+  m_AnchoredPosition: {x: 96.5, y: -66.7}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2011439187
@@ -112252,8 +112683,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SonidosBotonUI
   fuenteAudioUI: {fileID: 461450226}
-  sonidoHover: {fileID: 8300000, guid: 9f971aed45f53a746b8bd5df85929b4b, type: 3}
-  sonidoClic: {fileID: 8300000, guid: 215221032236edf42a916ba2671af0e7, type: 3}
+  sonidoHover: {fileID: 8300000, guid: 81a4add562a666d4ebdc023d9a6adeef, type: 3}
+  sonidoClic: {fileID: 8300000, guid: 6e23ddc7fb36b3f40b64a6de8516d6ab, type: 3}
 --- !u!114 &2011439188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112727,6 +113158,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1692269114}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: PlayOneShot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 81a4add562a666d4ebdc023d9a6adeef, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -114074,6 +114517,143 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4514741687205942, guid: ecdfe8b9901cb624b8ff940a4f7cf882, type: 3}
   m_PrefabInstance: {fileID: 2041403963}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2042101464
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2042101466}
+  - component: {fileID: 2042101465}
+  m_Layer: 0
+  m_Name: Llaves
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &2042101465
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2042101464}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 5672211555039708103, guid: a2cd920fcfa51b44184666ddc0119ddc, type: 2}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: b82aadf1f196684478bca1761d646e45, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &2042101466
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2042101464}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 424.81, y: 1.71, z: 867.39}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 627522027}
+  - {fileID: 257229977}
+  - {fileID: 501571445}
+  - {fileID: 1788793590}
+  - {fileID: 1074547619}
+  - {fileID: 579658154}
+  - {fileID: 67020956}
+  - {fileID: 1023421625}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2042886077
 GameObject:
   m_ObjectHideFlags: 0
@@ -116202,6 +116782,7 @@ MonoBehaviour:
   fuenteAudioPuerta: {fileID: 0}
   sonidoDesbloquearLlave: {fileID: 0}
   sonidoAbrirPuerta: {fileID: 0}
+  sonidoPuertaCerrada: {fileID: 0}
   onPuertaAbierta:
     m_PersistentCalls:
       m_Calls: []
@@ -116355,6 +116936,7 @@ MonoBehaviour:
   fuenteAudioPuerta: {fileID: 0}
   sonidoDesbloquearLlave: {fileID: 0}
   sonidoAbrirPuerta: {fileID: 0}
+  sonidoPuertaCerrada: {fileID: 0}
   onPuertaAbierta:
     m_PersistentCalls:
       m_Calls:
@@ -116615,9 +117197,10 @@ MonoBehaviour:
   velocidadApertura: 3
   textoAvisoUI: {fileID: 0}
   iconoCandadoUI: {fileID: 788448297}
-  fuenteAudioPuerta: {fileID: 0}
+  fuenteAudioPuerta: {fileID: 648007}
   sonidoDesbloquearLlave: {fileID: 0}
-  sonidoAbrirPuerta: {fileID: 0}
+  sonidoAbrirPuerta: {fileID: 8300000, guid: 4aef72b4879a5a446a8abdb043480985, type: 3}
+  sonidoPuertaCerrada: {fileID: 8300000, guid: 7f9ea89f6fc288047a55a9662cb7dd83, type: 3}
   onPuertaAbierta:
     m_PersistentCalls:
       m_Calls: []
@@ -116977,6 +117560,7 @@ MonoBehaviour:
   fuenteAudioPuerta: {fileID: 0}
   sonidoDesbloquearLlave: {fileID: 0}
   sonidoAbrirPuerta: {fileID: 0}
+  sonidoPuertaCerrada: {fileID: 0}
   onPuertaAbierta:
     m_PersistentCalls:
       m_Calls: []
@@ -118874,6 +119458,7 @@ MonoBehaviour:
   fuenteAudioPuerta: {fileID: 0}
   sonidoDesbloquearLlave: {fileID: 0}
   sonidoAbrirPuerta: {fileID: 0}
+  sonidoPuertaCerrada: {fileID: 0}
   onPuertaAbierta:
     m_PersistentCalls:
       m_Calls: []
@@ -119020,14 +119605,7 @@ SceneRoots:
   - {fileID: 1524470130}
   - {fileID: 1294240928}
   - {fileID: 1948932183}
-  - {fileID: 627522027}
-  - {fileID: 257229977}
-  - {fileID: 501571445}
-  - {fileID: 1788793590}
-  - {fileID: 1074547619}
-  - {fileID: 579658154}
-  - {fileID: 67020956}
-  - {fileID: 1023421625}
+  - {fileID: 2042101466}
   - {fileID: 231845541}
   - {fileID: 964991334}
   - {fileID: 1330331832}

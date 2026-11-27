@@ -1564,8 +1564,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SonidosBotonUI
   fuenteAudioUI: {fileID: 1006016140}
-  sonidoHover: {fileID: 8300000, guid: 9f971aed45f53a746b8bd5df85929b4b, type: 3}
-  sonidoClic: {fileID: 8300000, guid: 215221032236edf42a916ba2671af0e7, type: 3}
+  sonidoHover: {fileID: 8300000, guid: 81a4add562a666d4ebdc023d9a6adeef, type: 3}
+  sonidoClic: {fileID: 8300000, guid: 6e23ddc7fb36b3f40b64a6de8516d6ab, type: 3}
 --- !u!114 &63314168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5690,8 +5690,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SonidosBotonUI
   fuenteAudioUI: {fileID: 1006016140}
-  sonidoHover: {fileID: 8300000, guid: 9f971aed45f53a746b8bd5df85929b4b, type: 3}
-  sonidoClic: {fileID: 8300000, guid: 215221032236edf42a916ba2671af0e7, type: 3}
+  sonidoHover: {fileID: 8300000, guid: 81a4add562a666d4ebdc023d9a6adeef, type: 3}
+  sonidoClic: {fileID: 8300000, guid: 6e23ddc7fb36b3f40b64a6de8516d6ab, type: 3}
 --- !u!114 &266967477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9810,8 +9810,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SonidosBotonUI
   fuenteAudioUI: {fileID: 1006016140}
-  sonidoHover: {fileID: 8300000, guid: 9f971aed45f53a746b8bd5df85929b4b, type: 3}
-  sonidoClic: {fileID: 8300000, guid: 215221032236edf42a916ba2671af0e7, type: 3}
+  sonidoHover: {fileID: 8300000, guid: 81a4add562a666d4ebdc023d9a6adeef, type: 3}
+  sonidoClic: {fileID: 8300000, guid: 6e23ddc7fb36b3f40b64a6de8516d6ab, type: 3}
 --- !u!114 &516275139
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18702,8 +18702,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SonidosBotonUI
   fuenteAudioUI: {fileID: 1006016140}
-  sonidoHover: {fileID: 8300000, guid: 9f971aed45f53a746b8bd5df85929b4b, type: 3}
-  sonidoClic: {fileID: 8300000, guid: 215221032236edf42a916ba2671af0e7, type: 3}
+  sonidoHover: {fileID: 8300000, guid: 81a4add562a666d4ebdc023d9a6adeef, type: 3}
+  sonidoClic: {fileID: 8300000, guid: 6e23ddc7fb36b3f40b64a6de8516d6ab, type: 3}
 --- !u!114 &1033704357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25980,6 +25980,8 @@ MonoBehaviour:
   sensibilidadRaton: 0.2
   gravedad: -9.81
   audioCaminar: {fileID: 1462591900}
+  sonidoCaminarNormal: {fileID: 8300000, guid: 4157c55322868c042ba1760956da98ba, type: 3}
+  sonidoCorrerSprint: {fileID: 8300000, guid: 93ad10feae60bf14390e1ff840a35deb, type: 3}
 --- !u!4 &1462591894
 Transform:
   m_ObjectHideFlags: 0
@@ -26163,9 +26165,9 @@ AudioSource:
   m_GameObject: {fileID: 1462591891}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 5672211555039708103, guid: a2cd920fcfa51b44184666ddc0119ddc, type: 2}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: e1e4251d94c83c446a87c2cc0e10b3f3, type: 3}
+  m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

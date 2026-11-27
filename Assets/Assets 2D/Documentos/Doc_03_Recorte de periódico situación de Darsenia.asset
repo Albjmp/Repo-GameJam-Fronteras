@@ -22,3 +22,4 @@ MonoBehaviour:
     fronterizas."
   tipo: 1
   prefabMundo: {fileID: 0}
+  sonidoAlRecoger: {fileID: 8300000, guid: 2185d2d78fe61b94b9b31ee98ee694dc, type: 3}

@@ -21,6 +21,7 @@ public class PuertaConLlave : MonoBehaviour
     public AudioSource fuenteAudioPuerta;
     public AudioClip sonidoDesbloquearLlave;
     public AudioClip sonidoAbrirPuerta;
+    public AudioClip sonidoPuertaCerrada;
 
     [Header("Eventos al Abrir")]
     public UnityEvent onPuertaAbierta;
@@ -120,6 +121,11 @@ public class PuertaConLlave : MonoBehaviour
         {
             ActualizarTexto("Cerrada. Necesitas: " + llaveRequerida.nombre);
             MostrarCandado(true); // <-- MUESTRA EL CANDADO SI NO TIENES LA LLAVE
+
+            if (fuenteAudioPuerta != null && sonidoPuertaCerrada != null)
+            {
+                fuenteAudioPuerta.PlayOneShot(sonidoPuertaCerrada);
+            }
         }
     }
 

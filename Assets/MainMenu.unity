@@ -681,8 +681,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SonidosBotonUI
   fuenteAudioUI: {fileID: 1030729464}
-  sonidoHover: {fileID: 8300000, guid: 9f971aed45f53a746b8bd5df85929b4b, type: 3}
-  sonidoClic: {fileID: 8300000, guid: 215221032236edf42a916ba2671af0e7, type: 3}
+  sonidoHover: {fileID: 8300000, guid: 81a4add562a666d4ebdc023d9a6adeef, type: 3}
+  sonidoClic: {fileID: 8300000, guid: 6e23ddc7fb36b3f40b64a6de8516d6ab, type: 3}
 --- !u!1 &383906815
 GameObject:
   m_ObjectHideFlags: 0
@@ -1240,8 +1240,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SonidosBotonUI
   fuenteAudioUI: {fileID: 1030729464}
-  sonidoHover: {fileID: 8300000, guid: 9f971aed45f53a746b8bd5df85929b4b, type: 3}
-  sonidoClic: {fileID: 8300000, guid: 215221032236edf42a916ba2671af0e7, type: 3}
+  sonidoHover: {fileID: 8300000, guid: 81a4add562a666d4ebdc023d9a6adeef, type: 3}
+  sonidoClic: {fileID: 8300000, guid: 99431d91058bc5d44bc3426b0da270f9, type: 3}
 --- !u!1 &571883957
 GameObject:
   m_ObjectHideFlags: 0
@@ -2575,8 +2575,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SonidosBotonUI
   fuenteAudioUI: {fileID: 1030729464}
-  sonidoHover: {fileID: 8300000, guid: 9f971aed45f53a746b8bd5df85929b4b, type: 3}
-  sonidoClic: {fileID: 8300000, guid: 215221032236edf42a916ba2671af0e7, type: 3}
+  sonidoHover: {fileID: 8300000, guid: 81a4add562a666d4ebdc023d9a6adeef, type: 3}
+  sonidoClic: {fileID: 8300000, guid: 6e23ddc7fb36b3f40b64a6de8516d6ab, type: 3}
 --- !u!1 &1100597822
 GameObject:
   m_ObjectHideFlags: 0

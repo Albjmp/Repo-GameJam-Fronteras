@@ -7,6 +7,17 @@ public class MainMenuManager : MonoBehaviour
     public GameObject mainMenuContent; // A GameObject containing your Play/Settings/Quit buttons
     public GameObject settingsPanel;
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (settingsPanel != null && settingsPanel.activeSelf)
+            {
+                settingsPanel.SetActive(false);
+            }
+        }
+    }
+
     public void PlayGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);

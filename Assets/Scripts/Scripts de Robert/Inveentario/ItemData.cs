@@ -15,4 +15,7 @@ public class ItemData : ScriptableObject
 
     [Header("Para soltar en el mundo 3D")]
     public GameObject prefabMundo; // Aquí arrastrarás el Prefab de la llave 3D
+
+    [Header("Audio Específico")]
+    public AudioClip sonidoAlRecoger;
 }
