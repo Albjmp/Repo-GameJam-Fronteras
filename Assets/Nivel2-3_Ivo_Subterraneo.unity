@@ -51276,6 +51276,7 @@ GameObject:
   - component: {fileID: 936335873}
   - component: {fileID: 936335872}
   - component: {fileID: 936335871}
+  - component: {fileID: 936335876}
   m_Layer: 6
   m_Name: Anomalia 2
   m_TagString: Untagged
@@ -51295,7 +51296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 223106ad1eae62b49900074414c8e2c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PerseguidorConstante
-  tiempoEsperaInicial: 30
+  tiempoEsperaInicial: 1
 --- !u!195 &936335867
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -51368,7 +51369,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 1
+  m_Radius: 1.5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &936335871
 MonoBehaviour:
@@ -51486,7 +51487,7 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
-  m_Height: 1
+  m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!64 &936335875
@@ -51511,6 +51512,33 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!54 &936335876
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 936335865}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!4 &939333669 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7176362994317539961, guid: a45edb9d0963a3243a482f056a097546, type: 3}
@@ -95338,7 +95366,7 @@ MonoBehaviour:
   distancia: 3.5
   mask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 251
   puntero: {fileID: 0}
   TextDetect: {fileID: 199061095}
 --- !u!114 &1740654542
@@ -95378,8 +95406,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BarraDeVida
   barraDeVida: {fileID: 2035441128}
-  vidaMaxima: 100
-  vidaActual: 100
+  vidaMaxima: 5
+  vidaActual: 5
 --- !u!114 &1740654544
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103516,7 +103544,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1879323120}
   - component: {fileID: 1879323119}
-  - component: {fileID: 1879323121}
   - component: {fileID: 1879323122}
   - component: {fileID: 1879323127}
   - component: {fileID: 1879323126}
@@ -103524,6 +103551,8 @@ GameObject:
   - component: {fileID: 1879323124}
   - component: {fileID: 1879323123}
   - component: {fileID: 1879323128}
+  - component: {fileID: 1879323129}
+  - component: {fileID: 1879323130}
   m_Layer: 6
   m_Name: Anomalia
   m_TagString: Untagged
@@ -103562,28 +103591,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!195 &1879323121
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1879323118}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!135 &1879323122
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -103603,7 +103610,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 1
+  m_Radius: 1.5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1879323123
 MonoBehaviour:
@@ -103638,8 +103645,8 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 2.735
-  m_Height: 5.04
+  m_Radius: 0.5
+  m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!64 &1879323125
@@ -103659,7 +103666,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
@@ -103758,7 +103765,56 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 223106ad1eae62b49900074414c8e2c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PerseguidorConstante
-  tiempoEsperaInicial: 30
+  tiempoEsperaInicial: 1
+--- !u!54 &1879323129
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1879323118}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!195 &1879323130
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1879323118}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 2.735
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 5.04
+  m_BaseOffset: 2.52
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1001 &1879489685
 PrefabInstance:
   m_ObjectHideFlags: 0
